@@ -1,0 +1,4 @@
+verilog work "../sources/xvga.v"
+verilog work "../sources/debounce.v"
+verilog work "../sources/catch_game.v"
+verilog work "../sources/catch.v"
