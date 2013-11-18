@@ -1,5 +1,5 @@
 NUM_USER_FILES
-5
+7
 s
 user_file_1
 labkit.ucf
@@ -15,4 +15,13 @@ user_file_4
 s
 user_file_5
 ../sources/debounce.v
+s
+user_file_6
+../sources/flash_manager.v
+s
+user_file_7
+../sources/disp_sprites.v
+s
+user_file_8
+../sources/roms/tiger_rom/tiger_rom.xco
 s
