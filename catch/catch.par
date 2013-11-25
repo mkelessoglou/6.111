@@ -1,7 +1,7 @@
 Release 10.1.03 par K.39 (lin64)
 Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
 
-eecs-digital-11::  Sun Nov 03 15:09:19 2013
+eecs-digital-13::  Fri Nov 22 12:48:57 2013
 
 par -w -intstyle ise -ol std -t 1 catch_map.ncd catch.ncd catch.pcf 
 
@@ -430,7 +430,7 @@ Total CPU time to Placer completion: 6 secs
 
 Starting Router
 
-Phase 1: 838 unrouted;       REAL time: 15 secs 
+Phase 1: 838 unrouted;       REAL time: 16 secs 
 
 Phase 2: 551 unrouted;       REAL time: 16 secs 
 
@@ -505,7 +505,7 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 330 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 25 secs 
+Total REAL time to PAR completion: 33 secs 
 Total CPU time to PAR completion: 21 secs 
 
 Peak Memory Usage:  584 MB

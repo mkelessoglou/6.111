@@ -18,6 +18,12 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
+//This module takes in relative positions of the gloves and converts them
+// to global coordinates
+//The 0 x coordinate is 2 meters left of the leftmost glove (as seen on the screen)
+//The 0 y coordinate is approximating ground
+//For this to be accurate, the cameras' height and distance to the players must be
+// close to constant
 module global_coords(
     input clk,
     input rel_glove1_x,

@@ -839,6 +839,7 @@ proc restore { { project_dir "" } } {
       "../sources/ballSM.v" 
       "../sources/catch.v" 
       "../sources/catch_game.v" 
+      "../sources/coords_to_pixel.v" 
       "../sources/debounce.v" 
       "../sources/disp_sprites.v" 
       "../sources/flash_manager.v" 

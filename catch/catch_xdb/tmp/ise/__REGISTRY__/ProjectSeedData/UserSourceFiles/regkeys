@@ -1,8 +1,11 @@
 NUM_USER_FILES
-9
+10
 s
 user_file_1
 labkit.ucf
+s
+user_file_10
+../sources/coords_to_pixel.v
 s
 user_file_2
 ../sources/catch.v

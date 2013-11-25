@@ -8,3 +8,9 @@ par -ise "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/cat
 trce -ise "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch/catch.ise" -intstyle ise -v 3 -s 4 -xml catch catch.ncd -o catch.twr catch.pcf -ucf labkit.ucf
 bitgen -ise "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch/catch.ise" -intstyle ise -f catch.ut catch.ncd
 bitgen -ise "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch/catch.ise" -intstyle ise -f catch.ut catch.ncd
+xst -ise "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch/catch.ise" -intstyle ise -ifn "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch/catch.xst" -ofn "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch/catch.syr"
+ngdbuild -ise "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch/catch.ise" -intstyle ise -dd _ngo  -aul -nt timestamp -i -p xc2v6000-bf957-4 "catch.ngc" catch.ngd
+map -ise "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch/catch.ise" -intstyle ise -p xc2v6000-bf957-4 -cm area -pr off -k 4 -c 100 -tx off -o catch_map.ncd catch.ngd catch.pcf
+par -ise "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch/catch.ise" -w -intstyle ise -ol std -t 1 catch_map.ncd catch.ncd catch.pcf
+trce -ise "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch/catch.ise" -intstyle ise -v 3 -s 4 -xml catch catch.ncd -o catch.twr catch.pcf -ucf labkit.ucf
+bitgen -ise "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch/catch.ise" -intstyle ise -f catch.ut catch.ncd
