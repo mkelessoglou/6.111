@@ -26,17 +26,17 @@
 // close to constant
 module global_coords(
     input clk,
-    input rel_glove1_x,
-    input rel_glove1_y,
-    input rel_glove2_x,
-    input rel_glove2_y,
-    input dist,//in meters
+    input rel_glove1x,
+    input rel_glove1y,
+    input rel_glove2x,
+    input rel_glove2y,
+    input[5:0] dist,//in meters
     input right_hand1,
     input right_hand2,
-    output glob_glove1_x,
-    output glob_glove1_y,
-    output glob_glove2_x,
-    output glob_glove2_y
+    output[15:0] glob_glove1x,
+    output[15:0] glob_glove1y,
+    output[15:0] glob_glove2x,
+    output[15:0] glob_glove2y
     );
 	 
 	 //all distances except for dist are in millimeters; dist is in meters

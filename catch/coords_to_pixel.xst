@@ -1,0 +1,4 @@
+set -tmpdir "./xst/projnav.tmp"
+elaborate
+-ifn coords_to_pixel.prj
+-ifmt mixed

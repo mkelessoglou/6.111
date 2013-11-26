@@ -1,4 +1,8 @@
-MO xvga NULL ../sources/xvga.v vlg02/xvga.bin 1385142483
-MO debounce NULL ../sources/debounce.v vlg1D/debounce.bin 1385142483
-MO catch NULL ../sources/catch.v vlg3B/catch.bin 1385142484
-MO catch_game NULL ../sources/catch_game.v vlg70/catch__game.bin 1385142483
+MO xvga NULL ../sources/xvga.v vlg02/xvga.bin 1385504861
+MO ballSM NULL ../sources/ballSM.v vlg4F/ball_s_m.bin 1385502390
+MO debounce NULL ../sources/debounce.v vlg1D/debounce.bin 1385504861
+MO global_coords NULL ../sources/global_coords.v vlg42/global__coords.bin 1385505831
+MO catch NULL ../sources/catch.v vlg3B/catch.bin 1385504861
+MO catch_game NULL ../sources/catch_game.v vlg70/catch__game.bin 1385505831
+MO coords_to_pixel NULL ../sources/coords_to_pixel.v vlg29/coords__to__pixel.bin 1385500846
+MO blob NULL ../sources/blob.v vlg73/blob.bin 1385501608

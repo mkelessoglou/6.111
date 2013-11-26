@@ -27,11 +27,13 @@ module ballSM(
     input[15:0] glove2y,
     input glove1closed,
     input glove2closed,
+	 input can_catch1,
+	 input can_catch2,
 	 input[5:0] dist,
     output reg[1:0] ball_state,//0 if ball is in the air,
 									 //1 if held by glove1, 2 if held by glove2
-    output reg[15:0] ballx,
-	 output reg[15:0] bally
+    output reg[15:0] ball_x,
+	 output reg[15:0] ball_y
     );
 	 
 	 parameter updatesPerSec = 128;
@@ -41,8 +43,8 @@ module ballSM(
 	 //All distances in the inputs and outputs are in millimeters
 	 
 	 //Ball's velocity in millimeters/second
-	 signed reg[16:0] ballvelx;
-	 signed reg[16:0] ballvely;
+	 reg signed[16:0] ballvelx;
+	 reg signed[16:0] ballvely;
 	 
 	 
 	 //This signal dictates when velocity and position are updated
@@ -57,7 +59,8 @@ module ballSM(
 	 //These keep track of whether the glove has recently been opened
 	 reg glove1opened;
 	 reg glove2opened;
-	 reg[7:0] glove_counter;
+	 reg glove1edge;
+	 reg glove2edge;
 	 
 	 //These keep track of whether the ball is close enough to a glove to get caught
 	 wire closeToGlove1;
@@ -70,7 +73,7 @@ module ballSM(
 	 //This keeps track of whether the ball is touching the floor or a wall
 	 wire ballAtEdge; 
 	 
-	 always @(*) begin
+
 		assign mmdist = {10'b0,dist}*1000;
 		 assign closeToGlove1 = 
 			((ball_x > glove1x && ball_x - glove1x < tolerance)
@@ -84,20 +87,18 @@ module ballSM(
 			|| (ball_y < glove2y && glove2y - ball_y < tolerance));
 		 assign ballAtEdge =
 			(ball_x < ballRadius + 5) || (ball_x > mmdist - ballRadius)
-			|| (ball_y < ballRadius + 5)
-	 end
+			|| (ball_y < ballRadius + 5);
+
 
 	 
 	 always @(posedge clk) begin
-		if (glove_counter == 0) begin
-			glove1opened <= ~glove1closed;
-			glove2opened <= ~glove2closed;
-			glove_counter <= updatesPerSec/2;
-		end
+		glove1opened <= ~glove1closed;
+		glove2opened <= ~glove2closed;
+		glove1edge <= glove1closed && glove1opened;
+		glove2edge <= glove2closed && glove2opened;
 		if (update_counter == 0) begin
 			update <= 1;
 			update_counter <= 210937;//128Hz must be same as updatesPerSec
-			glove_counter <= glove_counter - 1;
 		end else begin
 			update <= 0;
 			update_counter <= update_counter - 1;
@@ -137,30 +138,40 @@ module ballSM(
 				end
 			end
 			case (ball_state)
-				0:
-					if (ballAtEdge) begin
-						ball_x <= ball_x;
-						ball_y <= ball_y;
-					end else begin
-						ball_x <= ball_x + (ballvelx / updatesPerSec); //DeltaX = v*DeltaT
-						ball_y <= ball_y + (ballvely / updatesPerSec);
+				0: 
+				begin
+					if (update) begin
+						if (ballAtEdge) begin
+							ball_x <= ball_x;
+							ball_y <= ball_y;
+						end else begin
+							ball_x <= ball_x + (ballvelx / updatesPerSec); //DeltaX = v*DeltaT
+							ball_y <= ball_y + (ballvely / updatesPerSec);
+						end
 					end
-					if (glove1closed && glove1opened && closeToGlove1) state <= 1;
-					else if (glove2closed && glove2opened && closeToGlove2) state <= 2;
-					else state <= 0;
+					if (glove1edge && can_catch1 && closeToGlove1) ball_state <= 1;
+					else if (glove2edge && can_catch2 && closeToGlove2) ball_state <= 2;
+					else ball_state <= 0;
+				end
 				1:
+				begin
 					ball_x <= glove1x;
 					ball_y <= glove1y;
 					if (glove1closed) ball_state <= 1;
 					else ball_state <= 0;
+				end
 				2:
+				begin
 					ball_x <= glove2x;
 					ball_y <= glove2y;
 					if (glove2closed) ball_state <= 2;
 					else ball_state <= 0;
+				end
 				default:
+				begin
 					ball_x <= ball_x;
 					ball_y <= ball_y;
+				end
 			endcase
 		end
 	 end

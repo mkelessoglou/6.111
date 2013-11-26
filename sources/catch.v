@@ -297,8 +297,30 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
    // feed XVGA signals to user's pong game
    wire [23:0] pixel;
    wire phsync,pvsync,pblank;
-   catch_game cg(.vclock(clock_65mhz),.reset(reset),
-                .up(up),.down(down),.pspeed(switch[7:4]),
+	
+	////////////////////////////////////////////////////////
+	// signals for the game
+	wire glove1closed;
+	wire glove2closed;
+	wire glove1x; // don't know format of coords yet
+	wire glove1y;
+	wire glove2x;
+	wire glove2y;
+	wire[5:0] dist;
+	wire can_catch1;
+	wire can_catch2;
+	wire right_hand1;
+	wire right_hand2;
+	/////////////////////////////////////////////////////////
+	
+	
+   catch_game cg(.vclock(clock_27mhz),.reset(reset),
+                .glove1closed(glove1closed),.glove2closed(glove2closed),
+					 .rel_glove1x(glove1x),.rel_glove1y(glove1y),
+					 .rel_glove2x(glove2x),.rel_glove2y(glove2y),
+					 .dist(dist),
+					 .can_catch1(can_catch1),.can_catch2(can_catch2),
+					 .right_hand1(right_hand1),.right_hand2(right_hand2),
 		.hcount(hcount),.vcount(vcount),
                 .hsync(hsync),.vsync(vsync),.blank(blank),
 		.phsync(phsync),.pvsync(pvsync),.pblank(pblank),.pixel(pixel));

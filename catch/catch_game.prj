@@ -1,0 +1,2 @@
+verilog work "../sources/global_coords.v"
+verilog work "../sources/catch_game.v"
