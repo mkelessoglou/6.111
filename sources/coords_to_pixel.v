@@ -46,7 +46,7 @@ module coords_to_pixel(
 		//multiply by 1024 (number of pixels) and divide by 1024 for mm's per 1.024m
 		//so do nothing
 		assign pixel_x = x_coord >> powerOf2;
-		assign pixel_y = y_coord >> powerOf2;
+		assign pixel_y = 767 - (y_coord >> powerOf2);
 	 end
 
 

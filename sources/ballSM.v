@@ -27,19 +27,23 @@ module ballSM(
     input[15:0] glove2y,
     input glove1closed,
     input glove2closed,
+	 input[5:0] dist,
     output reg[1:0] ball_state,//0 if ball is in the air,
 									 //1 if held by glove1, 2 if held by glove2
     output reg[15:0] ballx,
 	 output reg[15:0] bally
     );
 	 
-	 parameter updatesPerSec = 120;
+	 parameter updatesPerSec = 128;
+	 parameter tolerance = 50; //within how many mms a catch can be made
+	 parameter ballRadius = 30;
 	 
 	 //All distances in the inputs and outputs are in millimeters
 	 
 	 //Ball's velocity in millimeters/second
-	 signed reg[15:0] ballvelx;
-	 signed reg[15:0] ballvely;
+	 signed reg[16:0] ballvelx;
+	 signed reg[16:0] ballvely;
+	 
 	 
 	 //This signal dictates when velocity and position are updated
 	 reg update;
@@ -54,6 +58,34 @@ module ballSM(
 	 reg glove1opened;
 	 reg glove2opened;
 	 reg[7:0] glove_counter;
+	 
+	 //These keep track of whether the ball is close enough to a glove to get caught
+	 wire closeToGlove1;
+	 wire closeToGlove2;
+	 
+	 
+	 wire[15:0] mmdist;
+	 
+	 
+	 //This keeps track of whether the ball is touching the floor or a wall
+	 wire ballAtEdge; 
+	 
+	 always @(*) begin
+		assign mmdist = {10'b0,dist}*1000;
+		 assign closeToGlove1 = 
+			((ball_x > glove1x && ball_x - glove1x < tolerance)
+			|| (ball_x < glove1x && glove1x - ball_x < tolerance)) &&
+			((ball_y > glove1y && ball_y - glove1y < tolerance)
+			|| (ball_y < glove1y && glove1y - ball_y < tolerance));
+		 assign closeToGlove2 =
+			((ball_x > glove2x && ball_x - glove2x < tolerance)
+			|| (ball_x < glove2x && glove2x - ball_x < tolerance)) &&
+			((ball_y > glove2y && ball_y - glove2y < tolerance)
+			|| (ball_y < glove2y && glove2y - ball_y < tolerance));
+		 assign ballAtEdge =
+			(ball_x < ballRadius + 5) || (ball_x > mmdist - ballRadius)
+			|| (ball_y < ballRadius + 5)
+	 end
 
 	 
 	 always @(posedge clk) begin
@@ -64,7 +96,7 @@ module ballSM(
 		end
 		if (update_counter == 0) begin
 			update <= 1;
-			update_counter <= 225000;//120Hz must be same as updatesPerSec
+			update_counter <= 210937;//128Hz must be same as updatesPerSec
 			glove_counter <= glove_counter - 1;
 		end else begin
 			update <= 0;
@@ -96,12 +128,26 @@ module ballSM(
 			if (update) begin
 				pastposx <= ball_x;
 				pastposy <= ball_y;
-				ballvelx <= (ball_x - pastposx)*UpdatesPerSec;
-				ballvely <= (ball_x - pastposx)*UpdatesPerSec;
+				if (ball_state > 0) begin
+					ballvelx <= (ball_x - pastposx)*updatesPerSec;
+					ballvely <= (ball_x - pastposx)*updatesPerSec;
+				end else begin
+					ballvelx <= ballvelx; //no air resistance
+					ballvely <= ballvely - 77; //77 = g*DeltaT = 9806 mm/s^2 * (1/128 s)
+				end
 			end
 			case (ball_state)
 				0:
-					//physics happens
+					if (ballAtEdge) begin
+						ball_x <= ball_x;
+						ball_y <= ball_y;
+					end else begin
+						ball_x <= ball_x + (ballvelx / updatesPerSec); //DeltaX = v*DeltaT
+						ball_y <= ball_y + (ballvely / updatesPerSec);
+					end
+					if (glove1closed && glove1opened && closeToGlove1) state <= 1;
+					else if (glove2closed && glove2opened && closeToGlove2) state <= 2;
+					else state <= 0;
 				1:
 					ball_x <= glove1x;
 					ball_y <= glove1y;
