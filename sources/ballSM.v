@@ -90,7 +90,7 @@ module ballSM(
 			((ball_y > glove2y && ball_y - glove2y < tolerance)
 			|| (ball_y < glove2y && glove2y - ball_y < tolerance));
 		 assign ballAtEdge =
-			(ball_x < ballRadius + 5) || (ball_x > mmdist - ballRadius)
+			(ball_x < ballRadius + 5) || (ball_x > mmdist + 4000 - ballRadius)
 			|| (ball_y < ballRadius + 5);
 
 
