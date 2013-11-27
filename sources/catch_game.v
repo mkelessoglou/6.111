@@ -46,25 +46,25 @@ module catch_game (
 
 
 
-	reg[15:0] glove1x;
-	reg[15:0] glove1y;
-	reg[15:0] glove2x;
-	reg[15:0] glove2y;
+	wire[15:0] glove1x;
+	wire[15:0] glove1y;
+	wire[15:0] glove2x;
+	wire[15:0] glove2y;
 	
-	reg[1:0] ball_state;
-	reg[15:0] ball_x;
-	reg[15:0] ball_y;
+	wire[1:0] ball_state;
+	wire[15:0] ball_x;
+	wire[15:0] ball_y;
 	
-	reg[10:0] ballpixelx;
-	reg[9:0] ballpixely;
-	reg[10:0] glove1pixelx;
-	reg[9:0] glove1pixely;
-	reg[10:0] glove2pixelx;
-	reg[9:0] glove2pixely;
+	wire[10:0] ballpixelx;
+	wire[9:0] ballpixely;
+	wire[10:0] glove1pixelx;
+	wire[9:0] glove1pixely;
+	wire[10:0] glove2pixelx;
+	wire[9:0] glove2pixely;
 	
-	reg[23:0] ballpixel;
-	reg[23:0] glove1pixel;
-	reg[23:0] glove2pixel;
+	wire[23:0] ballpixel;
+	wire[23:0] glove1pixel;
+	wire[23:0] glove2pixel;
 	
 	
 	global_coords gc(.clk(vclock),

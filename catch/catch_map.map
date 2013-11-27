@@ -11,7 +11,7 @@ Target Device  : xc2v6000
 Target Package : bf957
 Target Speed   : -4
 Mapper Version : virtex2 -- $Revision: 1.46.12.2 $
-Mapped Date    : Fri Nov 22 12:48:31 2013
+Mapped Date    : Tue Nov 26 20:40:06 2013
 
 Mapping design into LUTs...
 Running directed packing...
@@ -25,24 +25,24 @@ Design Summary:
 Number of errors:      0
 Number of warnings:  333
 Logic Utilization:
-  Number of Slice Flip Flops:            98 out of  67,584    1%
-  Number of 4 input LUTs:                87 out of  67,584    1%
+  Number of Slice Flip Flops:           213 out of  67,584    1%
+  Number of 4 input LUTs:               672 out of  67,584    1%
 Logic Distribution:
-  Number of occupied Slices:             93 out of  33,792    1%
-    Number of Slices containing only related logic:      93 out of      93 100%
-    Number of Slices containing unrelated logic:          0 out of      93   0%
+  Number of occupied Slices:            468 out of  33,792    1%
+    Number of Slices containing only related logic:     468 out of     468 100%
+    Number of Slices containing unrelated logic:          0 out of     468   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         163 out of  67,584    1%
-    Number used as logic:                86
-    Number used as a route-thru:         76
+  Total Number of 4 input LUTs:         877 out of  67,584    1%
+    Number used as logic:               671
+    Number used as a route-thru:        205
     Number used as Shift registers:       1
   Number of bonded IOBs:                576 out of     684   84%
-  Number of BUFGMUXs:                     1 out of      16    6%
+  Number of BUFGMUXs:                     2 out of      16   12%
   Number of DCMs:                         1 out of      12    8%
 
-Peak Memory Usage:  478 MB
-Total REAL time to MAP completion:  3 secs 
-Total CPU time to MAP completion:   2 secs 
+Peak Memory Usage:  491 MB
+Total REAL time to MAP completion:  4 secs 
+Total CPU time to MAP completion:   3 secs 
 
 NOTES:
 

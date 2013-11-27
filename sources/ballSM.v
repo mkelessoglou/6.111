@@ -36,15 +36,19 @@ module ballSM(
 	 output reg[15:0] ball_y
     );
 	 
+	 
+	 
 	 parameter updatesPerSec = 128;
 	 parameter tolerance = 50; //within how many mms a catch can be made
-	 parameter ballRadius = 30;
+	 parameter ballRadius = 50;
 	 
 	 //All distances in the inputs and outputs are in millimeters
 	 
 	 //Ball's velocity in millimeters/second
-	 reg signed[16:0] ballvelx;
-	 reg signed[16:0] ballvely;
+	 reg [15:0] ballvelx;
+	 reg [15:0] ballvely;
+	 reg ballvelxdir;//0 means right (positive x vel)
+	 reg ballvelydir;//0 means up (positive y vel)
 	 
 	 
 	 //This signal dictates when velocity and position are updated
@@ -130,11 +134,33 @@ module ballSM(
 				pastposx <= ball_x;
 				pastposy <= ball_y;
 				if (ball_state > 0) begin
-					ballvelx <= (ball_x - pastposx)*updatesPerSec;
-					ballvely <= (ball_x - pastposx)*updatesPerSec;
+					if (ball_x > pastposx)begin
+						ballvelx <= (ball_x - pastposx)*updatesPerSec;
+						ballvelxdir <= 0;
+					end else begin
+						ballvelx <= (pastposx - ball_x)*updatesPerSec;
+						ballvelxdir <= 1;
+					end
+					if (ball_y > pastposy)begin
+						ballvely <= (ball_y - pastposy)*updatesPerSec;
+						ballvelydir <= 0;
+					end else begin
+						ballvely <= (pastposy - ball_y)*updatesPerSec;
+						ballvelydir <= 1;
+					end
 				end else begin
 					ballvelx <= ballvelx; //no air resistance
-					ballvely <= ballvely - 77; //77 = g*DeltaT = 9806 mm/s^2 * (1/128 s)
+					if (ballvelydir == 0) begin
+					//77 = g*DeltaT = 9806 mm/s^2 * (1/128 s)
+						if (ballvely >= 77) ballvely <= ballvely - 77;
+						else begin
+							ballvelydir <= 1;
+							ballvely <= 77 - ballvely;
+						end
+					end else begin
+						if (ballvely <= 16'hFFFF - 16'd77) ballvely <= ballvely + 77;
+						else ballvely <= 16'hFFFF;
+					end
 				end
 			end
 			case (ball_state)
@@ -145,8 +171,14 @@ module ballSM(
 							ball_x <= ball_x;
 							ball_y <= ball_y;
 						end else begin
-							ball_x <= ball_x + (ballvelx / updatesPerSec); //DeltaX = v*DeltaT
-							ball_y <= ball_y + (ballvely / updatesPerSec);
+						//DeltaX = v*DeltaT
+							if (~ballvelxdir) ball_x <= ball_x + (ballvelx / updatesPerSec);
+							else ball_x <= ball_x - (ballvelx / updatesPerSec);
+							if (~ballvelydir) ball_y <= ball_y + (ballvely / updatesPerSec);
+							else begin
+								if (ball_y > (ballvely / updatesPerSec)) ball_y <= ball_y - (ballvely / updatesPerSec);
+								else ball_y <= 5;
+							end
 						end
 					end
 					if (glove1edge && can_catch1 && closeToGlove1) ball_state <= 1;
@@ -175,6 +207,15 @@ module ballSM(
 			endcase
 		end
 	 end
+	 
+	 //for testing purposes
+	 initial ball_state = 0;
+	 initial ball_x = 16'd4000;
+	 initial ball_y = 16'd2000;
+	 initial ballvelx = 1000;
+	 initial ballvely = 1000;
+	 initial ballvelxdir = 0;
+	 initial ballvelydir = 0;
 
 
 endmodule

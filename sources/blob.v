@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module blob #(parameter WIDTH = 64, HEIGHT = 64)(
+module blob #(parameter WIDTH = 16, HEIGHT = 16)(
 	input [10:0] x,hcount,
 	input [9:0] y,vcount,
 	input [23:0] color,

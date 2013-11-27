@@ -311,10 +311,19 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
 	wire can_catch2;
 	wire right_hand1;
 	wire right_hand2;
+	wire game_reset;
+	
+	//will eventually be set by switches
+	assign dist = 6'd5;
+	assign can_catch1=1;
+	assign can_catch2=1;
+	assign glove1closed=switch[0];
+	assign glove2closed=switch[1];
+	assign game_reset = ~button_enter;
 	/////////////////////////////////////////////////////////
 	
 	
-   catch_game cg(.vclock(clock_27mhz),.reset(reset),
+   catch_game cg(.vclock(clock_27mhz),.reset(game_reset),
                 .glove1closed(glove1closed),.glove2closed(glove2closed),
 					 .rel_glove1x(glove1x),.rel_glove1y(glove1y),
 					 .rel_glove2x(glove2x),.rel_glove2y(glove2y),
@@ -333,26 +342,11 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
    wire border = (hcount==0 | hcount==1023 | vcount==0 | vcount==767);
    
    reg b,hs,vs;
-   always @(posedge clock_65mhz) begin
-      if (switch[1:0] == 2'b01) begin
-	 // 1 pixel outline of visible area (white)
-	 hs <= hsync;
-	 vs <= vsync;
-	 b <= blank;
-	 rgb <= {24{border}};
-      end else if (switch[1:0] == 2'b10) begin
-	 // color bars
-	 hs <= hsync;
-	 vs <= vsync;
-	 b <= blank;
-	 rgb <= {{8{hcount[8]}}, {8{hcount[7]}}, {8{hcount[6]}}} ;
-      end else begin
-         // default: pong
-	 hs <= phsync;
+   always @(posedge clock_27mhz) begin
+    hs <= phsync;
 	 vs <= pvsync;
 	 b <= pblank;
 	 rgb <= pixel;
-      end
    end
 
    // VGA Output.  In order to meet the setup and hold times of the
