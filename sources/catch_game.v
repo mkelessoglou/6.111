@@ -32,12 +32,15 @@ module catch_game (
 	input can_catch2,
 	input right_hand1,
 	input right_hand2,
+	input test0,
+	input test1,
    input [10:0] hcount,	// horizontal index of current pixel (0..1023)
    input [9:0] 	vcount, // vertical index of current pixel (0..767)
    input hsync,		// XVGA horizontal sync signal (active low)
    input vsync,		// XVGA vertical sync signal (active low)
    input blank,		// XVGA blanking (1 means output black pixel)
- 	
+	
+ 	output debug,
    output phsync,	// pong game's horizontal sync
    output pvsync,	// pong game's vertical sync
    output pblank,	// pong game's blanking
@@ -66,6 +69,9 @@ module catch_game (
 	wire[23:0] glove1pixel;
 	wire[23:0] glove2pixel;
 	
+	wire catch_event;
+	wire throw_event;
+	
 	
 	global_coords gc(.clk(vclock),
 			.rel_glove1x(rel_glove1x),.rel_glove1y(rel_glove1y),
@@ -79,8 +85,11 @@ module catch_game (
 			.glove2x(glove2x),.glove2y(glove2y),
 			.glove1closed(glove1closed),.glove2closed(glove2closed),
 			.can_catch1(can_catch1),.can_catch2(can_catch2),
-			.dist(dist),.ball_state(ball_state),
-			.ball_x(ball_x),.ball_y(ball_y));
+			.test0(test0),.test1(test1),
+			.dist(dist),
+			.debug(debug),
+			.catch_event(catch_event),.throw_event(throw_event),
+			.ball_state(ball_state),.ball_x(ball_x),.ball_y(ball_y));
 	
 	
 	coords_to_pixel bpc(.x_coord(ball_x),.y_coord(ball_y),

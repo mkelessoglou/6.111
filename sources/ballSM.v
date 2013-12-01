@@ -29,7 +29,12 @@ module ballSM(
     input glove2closed,
 	 input can_catch1,
 	 input can_catch2,
+	 input test0,
+	 input test1,
 	 input[5:0] dist,
+	 output debug,
+	 output reg catch_event,
+	 output reg throw_event,
     output reg[1:0] ball_state,//0 if ball is in the air,
 									 //1 if held by glove1, 2 if held by glove2
     output reg[15:0] ball_x,
@@ -39,7 +44,7 @@ module ballSM(
 	 
 	 
 	 parameter updatesPerSec = 128;
-	 parameter tolerance = 50; //within how many mms a catch can be made
+	 parameter tolerance = 100; //within how many mms a catch can be made
 	 parameter ballRadius = 50;
 	 
 	 //All distances in the inputs and outputs are in millimeters
@@ -77,17 +82,17 @@ module ballSM(
 	 //This keeps track of whether the ball is touching the floor or a wall
 	 wire ballAtEdge; 
 	 
-
+		assign debug = ~closeToGlove1;
 		assign mmdist = {10'b0,dist}*1000;
 		 assign closeToGlove1 = 
-			((ball_x > glove1x && ball_x - glove1x < tolerance)
+			((ball_x >= glove1x && ball_x - glove1x < tolerance)
 			|| (ball_x < glove1x && glove1x - ball_x < tolerance)) &&
-			((ball_y > glove1y && ball_y - glove1y < tolerance)
+			((ball_y >= glove1y && ball_y - glove1y < tolerance)
 			|| (ball_y < glove1y && glove1y - ball_y < tolerance));
 		 assign closeToGlove2 =
-			((ball_x > glove2x && ball_x - glove2x < tolerance)
+			((ball_x >= glove2x && ball_x - glove2x < tolerance)
 			|| (ball_x < glove2x && glove2x - ball_x < tolerance)) &&
-			((ball_y > glove2y && ball_y - glove2y < tolerance)
+			((ball_y >= glove2y && ball_y - glove2y < tolerance)
 			|| (ball_y < glove2y && glove2y - ball_y < tolerance));
 		 assign ballAtEdge =
 			(ball_x < ballRadius + 5) || (ball_x > mmdist + 4000 - ballRadius)
@@ -96,6 +101,8 @@ module ballSM(
 
 	 
 	 always @(posedge clk) begin
+		if (catch_event) catch_event <= 0;
+		if (throw_event) throw_event <= 0;
 		glove1opened <= ~glove1closed;
 		glove2opened <= ~glove2closed;
 		glove1edge <= glove1closed && glove1opened;
@@ -129,6 +136,21 @@ module ballSM(
 					ballvely <= 0;
 				end
 			end
+		end else if (test0) begin
+			ball_state <= 0;
+			ball_x <= glove1x;
+			ball_y <= glove1y;
+			ballvelx <= 0;
+			ballvely <= 4000;
+			ballvelydir <= 0;
+		end else if (test1) begin
+			ball_state <= 0;
+			ball_x <= glove1x;
+			ball_y <= glove1y;
+			ballvelx <= 4000;
+			ballvely <= 4000;
+			ballvelxdir <= 0;
+			ballvelydir <= 0;
 		end else begin
 			if (update) begin
 				pastposx <= ball_x;
@@ -181,23 +203,33 @@ module ballSM(
 							end
 						end
 					end
-					if (glove1edge && can_catch1 && closeToGlove1) ball_state <= 1;
-					else if (glove2edge && can_catch2 && closeToGlove2) ball_state <= 2;
-					else ball_state <= 0;
+					if (glove1edge && can_catch1 && closeToGlove1) begin
+						ball_state <= 1;
+						catch_event <= 1;
+					end else if (glove2edge && can_catch2 && closeToGlove2) begin
+						ball_state <= 2;
+						catch_event <= 1;
+					end else ball_state <= 0;
 				end
 				1:
 				begin
 					ball_x <= glove1x;
 					ball_y <= glove1y;
 					if (glove1closed) ball_state <= 1;
-					else ball_state <= 0;
+					else begin
+						ball_state <= 0;
+						throw_event <= 1;
+					end
 				end
 				2:
 				begin
 					ball_x <= glove2x;
 					ball_y <= glove2y;
 					if (glove2closed) ball_state <= 2;
-					else ball_state <= 0;
+					else begin
+						ball_state <= 0;
+						throw_event <= 1;
+					end
 				end
 				default:
 				begin
@@ -212,8 +244,8 @@ module ballSM(
 	 initial ball_state = 0;
 	 initial ball_x = 16'd4000;
 	 initial ball_y = 16'd2000;
-	 initial ballvelx = 1000;
-	 initial ballvely = 1000;
+	 initial ballvelx = 500;
+	 initial ballvely = 3000;
 	 initial ballvelxdir = 0;
 	 initial ballvelydir = 0;
 

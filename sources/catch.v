@@ -328,10 +328,12 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
 					 .rel_glove1x(glove1x),.rel_glove1y(glove1y),
 					 .rel_glove2x(glove2x),.rel_glove2y(glove2y),
 					 .dist(dist),
+					 .test0(~button0),.test1(~button1),
 					 .can_catch1(can_catch1),.can_catch2(can_catch2),
 					 .right_hand1(right_hand1),.right_hand2(right_hand2),
 		.hcount(hcount),.vcount(vcount),
                 .hsync(hsync),.vsync(vsync),.blank(blank),
+					 .debug(led[0]),
 		.phsync(phsync),.pvsync(pvsync),.pblank(pblank),.pixel(pixel));
 
    // switch[1:0] selects which video generator to use:
@@ -360,7 +362,7 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
    assign vga_out_hsync = hs;
    assign vga_out_vsync = vs;
    
-   assign led = ~{3'b000,up,down,reset,switch[1:0]};
+   assign led[7:1] = 7'b1111111;
 
 endmodule
 
