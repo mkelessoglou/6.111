@@ -1,0 +1,13 @@
+# Output products list for <ball_color_table>
+ball_color_table.asy
+ball_color_table.mif
+ball_color_table.ngc
+ball_color_table.sym
+ball_color_table.v
+ball_color_table.veo
+ball_color_table.vhd
+ball_color_table.vho
+ball_color_table.xco
+ball_color_table_blk_mem_gen_v2_8_xst_1.ngc_xst.xrpt
+ball_color_table_flist.txt
+ball_color_table_xmdf.tcl

@@ -1,0 +1,13 @@
+# Output products list for <ball_color_map>
+ball_color_map.asy
+ball_color_map.mif
+ball_color_map.ngc
+ball_color_map.sym
+ball_color_map.v
+ball_color_map.veo
+ball_color_map.vhd
+ball_color_map.vho
+ball_color_map.xco
+ball_color_map_blk_mem_gen_v2_8_xst_1.ngc_xst.xrpt
+ball_color_map_flist.txt
+ball_color_map_xmdf.tcl

@@ -1,0 +1,13 @@
+# Output products list for <open_hand_color_map>
+open_hand_color_map.asy
+open_hand_color_map.mif
+open_hand_color_map.ngc
+open_hand_color_map.sym
+open_hand_color_map.v
+open_hand_color_map.veo
+open_hand_color_map.vhd
+open_hand_color_map.vho
+open_hand_color_map.xco
+open_hand_color_map_blk_mem_gen_v2_8_xst_1.ngc_xst.xrpt
+open_hand_color_map_flist.txt
+open_hand_color_map_xmdf.tcl
