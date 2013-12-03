@@ -1,0 +1,8 @@
+verilog work "global_coords.v"
+verilog work "coords_to_pixel.v"
+verilog work "blob.v"
+verilog work "ballSM.v"
+verilog work "xvga.v"
+verilog work "debounce.v"
+verilog work "catch_game.v"
+verilog work "catch.v"

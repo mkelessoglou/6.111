@@ -1,8 +1,11 @@
+-
+
+-
 CommandLine-Map
 
 s
 CommandLine-Ngdbuild
-
+/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/bin/lin64/unwrapped/ngdbuild -ise /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch/catch.ise -intstyle ise -dd _ngo -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/r
 s
 CommandLine-Par
 
@@ -22,3 +25,6 @@ s
 Previous-Routed-NCD
 
 s
+s
+s
+-

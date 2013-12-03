@@ -1,3 +1,7 @@
+verilog work "../sources/global_coords.v"
+verilog work "../sources/coords_to_pixel.v"
+verilog work "../sources/blob.v"
+verilog work "../sources/ballSM.v"
 verilog work "../sources/xvga.v"
 verilog work "../sources/debounce.v"
 verilog work "../sources/catch_game.v"

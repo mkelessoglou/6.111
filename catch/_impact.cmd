@@ -10,6 +10,14 @@ setMode -bs
 setMode -bs
 setMode -bs
 setMode -bs
+Program -p 2 
+Program -p 2 
+Program -p 2 
+ReadIdcode -p 2 
+Program -p 2 
+Program -p 2 
+Program -p 2 
+Program -p 2 
 setMode -bs
 deleteDevice -position 1
 deleteDevice -position 1
