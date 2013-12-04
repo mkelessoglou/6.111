@@ -1,8 +1,11 @@
+-
+
+-
 CommandLine-Map
 
 s
 CommandLine-Ngdbuild
-/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/bin/lin64/unwrapped/ngdbuild -ise /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch2/catch2.ise -intstyle ise -dd _ngo -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms/ball_color_table -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms/ball_color_map -aul -nt timestamp -i -p xc2v6000-bf957-4 catch.ngc catch.ngd
+/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/bin/lin64/unwrapped/ngdbuild -ise /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch2/catch2.ise -intstyle ise -dd _ngo -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms/ball_color_table -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms/ball_color_map -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms/holding_ball_l_color_map -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms/holding_ball_color_map -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms/holding_ball_l_color_table -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms/open_hand_color_map -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms/holding_ball_color_table -sd /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms/open_hand_
 s
 CommandLine-Par
 
@@ -11,7 +14,7 @@ CommandLine-Xst
 
 s
 Previous-NGD
-catch_prev_built.ngd
+
 s
 Previous-NGM
 
@@ -22,3 +25,6 @@ s
 Previous-Routed-NCD
 
 s
+s
+s
+-

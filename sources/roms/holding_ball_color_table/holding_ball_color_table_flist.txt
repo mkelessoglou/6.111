@@ -1,0 +1,13 @@
+# Output products list for <holding_ball_color_table>
+holding_ball_color_table.asy
+holding_ball_color_table.mif
+holding_ball_color_table.ngc
+holding_ball_color_table.sym
+holding_ball_color_table.v
+holding_ball_color_table.veo
+holding_ball_color_table.vhd
+holding_ball_color_table.vho
+holding_ball_color_table.xco
+holding_ball_color_table_blk_mem_gen_v2_8_xst_1.ngc_xst.xrpt
+holding_ball_color_table_flist.txt
+holding_ball_color_table_xmdf.tcl

@@ -118,32 +118,80 @@ module catch_game (
 	
 	
 	
-	blob g1blob(.x(glove1pixelx),.hcount(hcount),
+/*	blob g1blob(.x(glove1pixelx),.hcount(hcount),
 			.y(glove1pixely),.vcount(vcount),
 			.color({16'b0,8'hFF}),
+			.pixel(glove1pixel));*/
+			
+	draw_p1 dp1(.clk(vclock),.hcount(hcount),.vcount(vcount),.blank(blank),
+			.x(glove1pixelx),.y(glove1pixely),.ball_state(ball_state),
 			.pixel(glove1pixel));
 			
-	blob g2blob(.x(glove2pixelx),.hcount(hcount),
+	/*blob g2blob(.x(glove2pixelx),.hcount(hcount),
 			.y(glove2pixely),.vcount(vcount),
 			.color({16'b0,8'hFF}),
+			.pixel(glove2pixel));*/
+			
+	draw_p2 dp2(.clk(vclock),.hcount(hcount),.vcount(vcount),.blank(blank),
+			.x(glove2pixelx),.y(glove2pixely),.ball_state(ball_state),
 			.pixel(glove2pixel));
 			
 	
 
-   wire [2:0] checkerboard;
-	
-   // REPLACE ME! The code below just generates a color checkerboard
-   // using 64 pixel by 64 pixel squares.
+
    
-   assign phsync = hsync;
-   assign pvsync = vsync;
-   assign pblank = blank;
-   assign checkerboard = hcount[8:6] + vcount[8:6];
 
-   // here we use three bits from hcount and vcount to generate the \
-   // checkerboard
 
-   assign pixel = ballpixel | glove1pixel | glove2pixel;
+	
+	reg[23:0] outpixel;
+	reg hsync1delay;
+	reg vsync1delay;
+	reg blank1delay;
+	reg hsync2delay;
+	reg vsync2delay;
+	reg blank2delay;
+	reg hsync3delay;
+	reg vsync3delay;
+	reg blank3delay;
+	reg hsync4delay;
+	reg vsync4delay;
+	reg blank4delay;
+	reg hsync5delay;
+	reg vsync5delay;
+	reg blank5delay;
+	reg hsync6delay;
+	reg vsync6delay;
+	reg blank6delay;
+	
+	always @(posedge vclock) begin
+		hsync1delay <= hsync;
+		vsync1delay <= vsync;
+		blank1delay <= blank;
+		hsync2delay <= hsync1delay;
+		vsync2delay <= vsync1delay;
+		blank2delay <= blank1delay;
+		hsync3delay <= hsync2delay;
+		vsync3delay <= vsync2delay;
+		blank3delay <= blank2delay;
+		hsync4delay <= hsync3delay;
+		vsync4delay <= vsync3delay;
+		blank4delay <= blank3delay;
+		hsync5delay <= hsync4delay;
+		vsync5delay <= vsync4delay;
+		blank5delay <= blank4delay;
+		hsync6delay <= hsync5delay;
+		vsync6delay <= vsync5delay;
+		blank6delay <= blank5delay;
+		if (|ballpixel) outpixel <= ballpixel;
+		else if (|glove1pixel) outpixel <= glove1pixel;
+		else outpixel <= glove2pixel;
+	end
+
+   assign pixel = outpixel;
+	
+   assign phsync = hsync6delay;
+   assign pvsync = vsync6delay;
+   assign pblank = blank6delay;
      
 endmodule
 
