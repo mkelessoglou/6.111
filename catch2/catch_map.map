@@ -11,7 +11,7 @@ Target Device  : xc2v6000
 Target Package : bf957
 Target Speed   : -4
 Mapper Version : virtex2 -- $Revision: 1.46.12.2 $
-Mapped Date    : Mon Dec  2 20:47:39 2013
+Mapped Date    : Tue Dec  3 19:09:40 2013
 
 Mapping design into LUTs...
 Running directed packing...
@@ -23,24 +23,26 @@ Design Summary
 
 Design Summary:
 Number of errors:      0
-Number of warnings:  333
+Number of warnings:  353
 Logic Utilization:
-  Number of Slice Flip Flops:           147 out of  67,584    1%
-  Number of 4 input LUTs:               655 out of  67,584    1%
+  Number of Slice Flip Flops:           223 out of  67,584    1%
+  Number of 4 input LUTs:               879 out of  67,584    1%
 Logic Distribution:
-  Number of occupied Slices:            422 out of  33,792    1%
-    Number of Slices containing only related logic:     422 out of     422 100%
-    Number of Slices containing unrelated logic:          0 out of     422   0%
+  Number of occupied Slices:            596 out of  33,792    1%
+    Number of Slices containing only related logic:     596 out of     596 100%
+    Number of Slices containing unrelated logic:          0 out of     596   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         798 out of  67,584    1%
-    Number used as logic:               655
-    Number used as a route-thru:        143
+  Total Number of 4 input LUTs:       1,077 out of  67,584    1%
+    Number used as logic:               879
+    Number used as a route-thru:        198
   Number of bonded IOBs:                576 out of     684   84%
+  Number of RAMB16s:                      2 out of     144    1%
+  Number of MULT18X18s:                   1 out of     144    1%
   Number of BUFGMUXs:                     2 out of      16   12%
   Number of DCMs:                         1 out of      12    8%
 
-Peak Memory Usage:  489 MB
-Total REAL time to MAP completion:  3 secs 
+Peak Memory Usage:  494 MB
+Total REAL time to MAP completion:  4 secs 
 Total CPU time to MAP completion:   3 secs 
 
 NOTES:

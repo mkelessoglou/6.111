@@ -1,3 +1,7 @@
+verilog work "../sources/roms/ball_color_table/ball_color_table.v"
+verilog work "../sources/roms/ball_color_map/ball_color_map.v"
+verilog work "../sources/get_map_address.v"
+verilog work "../sources/draw_ball.v"
 verilog work "global_coords.v"
 verilog work "coords_to_pixel.v"
 verilog work "blob.v"

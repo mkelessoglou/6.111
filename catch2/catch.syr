@@ -5,14 +5,14 @@ Parameter TMPDIR set to /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalpro
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch2/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: catch.prj
@@ -109,7 +109,15 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
+Compiling verilog file "../sources/roms/ball_color_table/ball_color_table.v" in library work
+Compiling verilog file "../sources/roms/ball_color_map/ball_color_map.v" in library work
+Module <ball_color_table> compiled
+Compiling verilog file "../sources/get_map_address.v" in library work
+Module <ball_color_map> compiled
+Compiling verilog file "../sources/draw_ball.v" in library work
+Module <get_map_address> compiled
 Compiling verilog file "global_coords.v" in library work
+Module <draw_ball> compiled
 Compiling verilog file "coords_to_pixel.v" in library work
 Module <global_coords> compiled
 Compiling verilog file "blob.v" in library work
@@ -149,9 +157,15 @@ Analyzing hierarchy for module <ballSM> in library <work> with parameters.
 
 Analyzing hierarchy for module <coords_to_pixel> in library <work>.
 
+Analyzing hierarchy for module <draw_ball> in library <work>.
+
 Analyzing hierarchy for module <blob> in library <work> with parameters.
 	HEIGHT = "00000000000000000000000000010000"
 	WIDTH = "00000000000000000000000000010000"
+
+Analyzing hierarchy for module <get_map_address> in library <work> with parameters.
+	xoffset = "0000000000100011"
+	yoffset = "0000000000011001"
 
 WARNING:Xst:2591 - "catch.v" line 267: attribute on instance <CLKFX_DIVIDE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 WARNING:Xst:2591 - "catch.v" line 267: attribute on instance <CLKFX_MULTIPLY> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
@@ -201,6 +215,14 @@ Module <ballSM> is correct for synthesis.
  
 Analyzing module <coords_to_pixel> in library <work>.
 Module <coords_to_pixel> is correct for synthesis.
+ 
+Analyzing module <draw_ball> in library <work>.
+Module <draw_ball> is correct for synthesis.
+ 
+Analyzing module <get_map_address> in library <work>.
+	xoffset = 16'b0000000000100011
+	yoffset = 16'b0000000000011001
+Module <get_map_address> is correct for synthesis.
  
 Analyzing module <blob> in library <work>.
 	HEIGHT = 32'sb00000000000000000000000000010000
@@ -367,12 +389,56 @@ Synthesizing Unit <blob>.
 Unit <blob> synthesized.
 
 
+Synthesizing Unit <get_map_address>.
+    Related source file is "../sources/get_map_address.v".
+WARNING:Xst:646 - Signal <fulladdr<15:12>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:643 - "../sources/get_map_address.v" line 54: The result of a 17x8-bit multiplication is partially used. Only the 16 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 12-bit register for signal <addr>.
+    Found 16-bit register for signal <fulladdr>.
+    Found 16-bit adder for signal <fulladdr$add0002> created at line 54.
+    Found 17-bit subtractor for signal <fulladdr$addsub0000> created at line 54.
+    Found 16-bit subtractor for signal <fulladdr$addsub0001> created at line 54.
+    Found 10-bit adder carry out for signal <fulladdr$addsub0002> created at line 54.
+    Found 11-bit adder carry out for signal <fulladdr$addsub0003> created at line 54.
+    Found 17x8-bit multiplier for signal <fulladdr$mult0001> created at line 54.
+    Found 18-bit adder for signal <outofbounds$add0000> created at line 43.
+    Found 18-bit adder for signal <outofbounds$add0002> created at line 43.
+    Found 16-bit adder carry out for signal <outofbounds$addsub0000> created at line 43.
+    Found 16-bit adder carry out for signal <outofbounds$addsub0001> created at line 43.
+    Found 16-bit comparator greater for signal <outofbounds$cmp_gt0000> created at line 43.
+    Found 19-bit comparator greater for signal <outofbounds$cmp_gt0001> created at line 43.
+    Found 16-bit comparator greater for signal <outofbounds$cmp_gt0002> created at line 43.
+    Found 19-bit comparator greater for signal <outofbounds$cmp_gt0003> created at line 43.
+    Found 16-bit comparator less for signal <outofbounds$cmp_lt0000> created at line 43.
+    Found 19-bit comparator less for signal <outofbounds$cmp_lt0001> created at line 43.
+    Found 16-bit comparator less for signal <outofbounds$cmp_lt0002> created at line 43.
+    Found 19-bit comparator less for signal <outofbounds$cmp_lt0003> created at line 43.
+    Found 19-bit subtractor for signal <outofbounds$sub0000> created at line 43.
+    Found 19-bit subtractor for signal <outofbounds$sub0001> created at line 43.
+    Found 18-bit subtractor for signal <outofbounds$sub0002> created at line 43.
+    Found 18-bit subtractor for signal <outofbounds$sub0003> created at line 43.
+    Summary:
+	inferred  28 D-type flip-flop(s).
+	inferred  13 Adder/Subtractor(s).
+	inferred   1 Multiplier(s).
+	inferred   8 Comparator(s).
+Unit <get_map_address> synthesized.
+
+
+Synthesizing Unit <draw_ball>.
+    Related source file is "../sources/draw_ball.v".
+    Found 24-bit register for signal <pixel>.
+    Found 4-bit register for signal <table_addr2>.
+    Summary:
+	inferred  28 D-type flip-flop(s).
+Unit <draw_ball> synthesized.
+
+
 Synthesizing Unit <catch_game>.
     Related source file is "catch_game.v".
 WARNING:Xst:646 - Signal <throw_event> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <checkerboard> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <catch_event> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <ball_state> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <catch_game> synthesized.
 
 
@@ -705,37 +771,45 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 29
+# Multipliers                                          : 1
+ 17x8-bit multiplier                                   : 1
+# Adders/Subtractors                                   : 40
  10-bit adder                                          : 3
  10-bit adder carry out                                : 3
  11-bit adder carry out                                : 3
- 16-bit adder                                          : 2
+ 16-bit adder                                          : 3
+ 16-bit adder carry out                                : 2
  16-bit addsub                                         : 2
- 16-bit subtractor                                     : 1
- 17-bit subtractor                                     : 4
- 18-bit subtractor                                     : 8
+ 16-bit subtractor                                     : 2
+ 17-bit subtractor                                     : 5
+ 18-bit adder                                          : 2
+ 18-bit subtractor                                     : 10
+ 19-bit subtractor                                     : 2
  6-bit adder carry out                                 : 3
 # Counters                                             : 6
  10-bit up counter                                     : 1
  11-bit up counter                                     : 1
  18-bit down counter                                   : 1
  20-bit up counter                                     : 3
-# Registers                                            : 31
+# Registers                                            : 35
  1-bit register                                        : 23
- 16-bit register                                       : 6
+ 12-bit register                                       : 1
+ 16-bit register                                       : 7
  2-bit register                                        : 1
- 24-bit register                                       : 1
-# Comparators                                          : 50
- 10-bit comparator greatequal                          : 3
- 11-bit comparator greatequal                          : 3
- 11-bit comparator less                                : 3
- 12-bit comparator less                                : 3
+ 24-bit register                                       : 2
+ 4-bit register                                        : 1
+# Comparators                                          : 54
+ 10-bit comparator greatequal                          : 2
+ 11-bit comparator greatequal                          : 2
+ 11-bit comparator less                                : 2
+ 12-bit comparator less                                : 2
  16-bit comparator greatequal                          : 5
- 16-bit comparator greater                             : 3
- 16-bit comparator less                                : 6
+ 16-bit comparator greater                             : 5
+ 16-bit comparator less                                : 8
  16-bit comparator lessequal                           : 1
  18-bit comparator less                                : 8
- 19-bit comparator greater                             : 1
+ 19-bit comparator greater                             : 3
+ 19-bit comparator less                                : 2
  2-bit comparator greater                              : 1
  2-bit comparator lessequal                            : 1
  7-bit comparator less                                 : 12
@@ -752,6 +826,10 @@ Macro Statistics
 =========================================================================
 
 Loading device for application Rf_Device from file '2v6000.nph' in environment /afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE.
+
+Synthesizing (advanced) Unit <get_map_address>.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_fulladdr_mult0001 by adding 1 register level(s).
+Unit <get_map_address> synthesized (advanced).
 WARNING:Xst:2677 - Node <ballvelx_0> of sequential type is unconnected in block <ballSM>.
 WARNING:Xst:2677 - Node <ballvelx_1> of sequential type is unconnected in block <ballSM>.
 WARNING:Xst:2677 - Node <ballvelx_2> of sequential type is unconnected in block <ballSM>.
@@ -759,14 +837,10 @@ WARNING:Xst:2677 - Node <ballvelx_3> of sequential type is unconnected in block 
 WARNING:Xst:2677 - Node <ballvelx_4> of sequential type is unconnected in block <ballSM>.
 WARNING:Xst:2677 - Node <ballvelx_5> of sequential type is unconnected in block <ballSM>.
 WARNING:Xst:2677 - Node <ballvelx_6> of sequential type is unconnected in block <ballSM>.
-WARNING:Xst:1710 - FF/Latch <rgb_8> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rgb_9> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rgb_10> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rgb_11> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rgb_12> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rgb_13> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rgb_14> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rgb_15> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <fulladdr_12> of sequential type is unconnected in block <get_map_address>.
+WARNING:Xst:2677 - Node <fulladdr_13> of sequential type is unconnected in block <get_map_address>.
+WARNING:Xst:2677 - Node <fulladdr_14> of sequential type is unconnected in block <get_map_address>.
+WARNING:Xst:2677 - Node <fulladdr_15> of sequential type is unconnected in block <get_map_address>.
 WARNING:Xst:2677 - Node <clean> of sequential type is unconnected in block <db2>.
 WARNING:Xst:2677 - Node <clean> of sequential type is unconnected in block <db3>.
 WARNING:Xst:2677 - Node <catch_event> of sequential type is unconnected in block <bsm>.
@@ -776,14 +850,20 @@ WARNING:Xst:2677 - Node <throw_event> of sequential type is unconnected in block
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 29
+# Multipliers                                          : 1
+ 17x8-bit multiplier                                   : 1
+# Adders/Subtractors                                   : 40
  10-bit adder                                          : 3
  10-bit adder carry out                                : 3
  11-bit adder carry out                                : 3
- 16-bit adder                                          : 2
+ 16-bit adder                                          : 3
+ 16-bit adder carry out                                : 2
  16-bit addsub                                         : 2
- 16-bit subtractor                                     : 1
- 18-bit subtractor                                     : 8
+ 16-bit subtractor                                     : 2
+ 17-bit subtractor                                     : 1
+ 18-bit adder                                          : 2
+ 18-bit subtractor                                     : 10
+ 19-bit subtractor                                     : 2
  6-bit adder carry out                                 : 3
  9-bit subtractor                                      : 4
 # Counters                                             : 6
@@ -791,19 +871,20 @@ Macro Statistics
  11-bit up counter                                     : 1
  18-bit down counter                                   : 1
  20-bit up counter                                     : 3
-# Registers                                            : 138
- Flip-Flops                                            : 138
-# Comparators                                          : 50
- 10-bit comparator greatequal                          : 3
- 11-bit comparator greatequal                          : 3
- 11-bit comparator less                                : 3
- 12-bit comparator less                                : 3
+# Registers                                            : 190
+ Flip-Flops                                            : 190
+# Comparators                                          : 54
+ 10-bit comparator greatequal                          : 2
+ 11-bit comparator greatequal                          : 2
+ 11-bit comparator less                                : 2
+ 12-bit comparator less                                : 2
  16-bit comparator greatequal                          : 5
- 16-bit comparator greater                             : 3
- 16-bit comparator less                                : 6
+ 16-bit comparator greater                             : 5
+ 16-bit comparator less                                : 8
  16-bit comparator lessequal                           : 1
  18-bit comparator less                                : 8
- 19-bit comparator greater                             : 1
+ 19-bit comparator greater                             : 3
+ 19-bit comparator less                                : 2
  2-bit comparator greater                              : 1
  2-bit comparator lessequal                            : 1
  7-bit comparator less                                 : 12
@@ -833,23 +914,19 @@ Optimizing unit <ballSM> ...
 
 Optimizing unit <blob> ...
 
+Optimizing unit <get_map_address> ...
+
+Optimizing unit <draw_ball> ...
+
 Optimizing unit <catch_game> ...
-WARNING:Xst:1710 - FF/Latch <rgb_8> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rgb_9> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rgb_10> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rgb_11> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rgb_12> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rgb_13> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rgb_14> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rgb_15> (without init value) has a constant value of 0 in block <catch>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <cg/bsm/catch_event> of sequential type is unconnected in block <catch>.
 WARNING:Xst:2677 - Node <cg/bsm/throw_event> of sequential type is unconnected in block <catch>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-INFO:Xst:2261 - The FF/Latch <rgb_16> in Unit <catch> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_17> <rgb_18> <rgb_19> <rgb_20> <rgb_21> <rgb_22> <rgb_23> 
-INFO:Xst:2261 - The FF/Latch <rgb_0> in Unit <catch> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_1> <rgb_2> <rgb_3> <rgb_4> <rgb_5> <rgb_6> <rgb_7> 
 Found area constraint ratio of 100 (+ 5) on block catch, actual ratio is 1.
+FlipFlop xvga1/vcount_0 has been replicated 1 time(s)
+FlipFlop xvga1/vcount_1 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -857,8 +934,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 147
- Flip-Flops                                            : 147
+# Registers                                            : 223
+ Flip-Flops                                            : 223
 
 =========================================================================
 
@@ -887,27 +964,29 @@ Design Statistics
 # IOs                              : 576
 
 Cell Usage :
-# BELS                             : 1631
+# BELS                             : 2256
 #      GND                         : 1
-#      INV                         : 177
-#      LUT1                        : 142
-#      LUT2                        : 208
-#      LUT3                        : 65
-#      LUT3_L                      : 1
-#      LUT4                        : 195
-#      LUT4_D                      : 3
-#      LUT4_L                      : 1
-#      MUXCY                       : 535
-#      MUXF5                       : 37
+#      INV                         : 224
+#      LUT1                        : 194
+#      LUT2                        : 292
+#      LUT2_D                      : 1
+#      LUT3                        : 74
+#      LUT3_D                      : 2
+#      LUT3_L                      : 2
+#      LUT4                        : 230
+#      LUT4_L                      : 2
+#      MULT_AND                    : 1
+#      MUXCY                       : 755
+#      MUXF5                       : 42
 #      VCC                         : 1
-#      XORCY                       : 265
-# FlipFlops/Latches                : 147
-#      FD                          : 6
+#      XORCY                       : 435
+# FlipFlops/Latches                : 223
+#      FD                          : 37
 #      FDE                         : 77
-#      FDR                         : 21
-#      FDRE                        : 12
+#      FDR                         : 57
+#      FDRE                        : 14
 #      FDRSE                       : 16
-#      FDS                         : 15
+#      FDS                         : 22
 # Shift Registers                  : 1
 #      SRL16                       : 1
 # Clock Buffers                    : 2
@@ -918,6 +997,11 @@ Cell Usage :
 #      OBUF                        : 240
 # DCMs                             : 1
 #      DCM                         : 1
+# MULTs                            : 1
+#      MULT18X18                   : 1
+# Others                           : 2
+#      ball_color_map              : 1
+#      ball_color_table            : 1
 =========================================================================
 
 Device utilization summary:
@@ -925,13 +1009,14 @@ Device utilization summary:
 
 Selected Device : 2v6000bf957-4 
 
- Number of Slices:                      425  out of  33792     1%  
- Number of Slice Flip Flops:            147  out of  67584     0%  
- Number of 4 input LUTs:                793  out of  67584     1%  
-    Number used as logic:               792
+ Number of Slices:                      591  out of  33792     1%  
+ Number of Slice Flip Flops:            223  out of  67584     0%  
+ Number of 4 input LUTs:               1022  out of  67584     1%  
+    Number used as logic:              1021
     Number used as Shift registers:       1
  Number of IOs:                         576
  Number of bonded IOBs:                 246  out of    684    35%  
+ Number of MULT18X18s:                    1  out of    144     0%  
  Number of GCLKs:                         2  out of     16    12%  
  Number of DCMs:                          1  out of     12     8%  
 
@@ -956,8 +1041,8 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clock_27mhz                        | IBUFG+BUFG             | 121   |
-clock_27mhz                        | vclk1:CLKFX            | 27    |
+clock_27mhz                        | IBUFG+BUFG             | 195   |
+clock_27mhz                        | vclk1:CLKFX            | 29    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -968,10 +1053,10 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 35.103ns (Maximum Frequency: 28.488MHz)
-   Minimum input arrival time before clock: 7.447ns
+   Minimum period: 89.589ns (Maximum Frequency: 11.162MHz)
+   Minimum input arrival time before clock: 7.427ns
    Maximum output required time after clock: 14.124ns
-   Maximum combinational path delay: No path found
+   Maximum combinational path delay: 4.030ns
 
 Timing Detail:
 --------------
@@ -979,41 +1064,39 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock_27mhz'
-  Clock period: 35.103ns (frequency: 28.488MHz)
-  Total number of paths / destination ports: 11313 / 323
+  Clock period: 89.589ns (frequency: 11.162MHz)
+  Total number of paths / destination ports: 83804 / 418
 -------------------------------------------------------------------------
-Delay:               5.851ns (Levels of Logic = 11)
-  Source:            xvga1/vcount_1 (FF)
-  Destination:       rgb_0 (FF)
+Delay:               14.932ns (Levels of Logic = 9)
+  Source:            xvga1/vcount_2 (FF)
+  Destination:       cg/db/gma/fulladdr_11 (FF)
   Source Clock:      clock_27mhz rising 2.4X
   Destination Clock: clock_27mhz rising
 
-  Data Path: xvga1/vcount_1 to rgb_0
+  Data Path: xvga1/vcount_2 to cg/db/gma/fulladdr_11
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            11   0.568   1.194  xvga1/vcount_1 (xvga1/vcount_1)
-     LUT1:I0->O            1   0.439   0.000  cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<1>_rt (cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<1>_rt)
-     MUXCY:S->O            1   0.298   0.000  cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<1> (cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<1>)
-     MUXCY:CI->O           1   0.053   0.000  cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<2> (cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<2>)
-     MUXCY:CI->O           1   0.053   0.000  cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<3> (cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<3>)
-     MUXCY:CI->O           1   0.053   0.000  cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<4> (cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<4>)
-     MUXCY:CI->O           1   0.053   0.000  cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<5> (cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<5>)
-     MUXCY:CI->O           1   0.053   0.000  cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<6> (cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<6>)
-     MUXCY:CI->O           1   0.053   0.000  cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<7> (cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<7>)
-     MUXCY:CI->O           1   0.053   0.000  cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<8> (cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<8>)
-     MUXCY:CI->O           1   0.942   0.803  cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<9> (cg/g2blob/Mcompar_pixel_cmp_lt0001_cy<9>)
-     LUT4:I0->O            1   0.439   0.518  cg/g2blob/pixel<0>11 (cg/glove2pixel<0>)
-     FDS:S                     0.280          rgb_0
+     FDRE:C->Q            18   0.568   1.057  xvga1/vcount_2 (xvga1/vcount_2)
+     LUT3_D:I2->O          9   0.439   0.896  cg/db/gma/Madd_fulladdr_addsub0002_xor<9>121 (cg/db/gma/N3)
+     LUT3_D:I2->O          1   0.439   0.552  cg/db/gma/Madd_fulladdr_addsub0002_xor<9>111 (cg/db/gma/N1)
+     LUT4:I2->O            0   0.439   0.000  cg/db/gma/Madd_fulladdr_addsub0002_xor<9>11 (cg/db/gma/fulladdr_addsub0002<9>)
+     MUXCY:DI->O           1   0.462   0.000  cg/db/gma/Msub_fulladdr_addsub0000_cy<9> (cg/db/gma/Msub_fulladdr_addsub0000_cy<9>)
+     XORCY:CI->O           1   1.274   0.517  cg/db/gma/Msub_fulladdr_addsub0000_xor<10> (cg/db/gma/fulladdr_addsub0000<10>)
+     MULT18X18:A10->P10    1   5.181   0.726  cg/db/gma/Mmult_fulladdr_mult0001 (cg/db/gma/fulladdr_mult0001<10>)
+     LUT2:I1->O            1   0.439   0.000  cg/db/gma/Madd_fulladdr_add0002_lut<10> (cg/db/gma/Madd_fulladdr_add0002_lut<10>)
+     MUXCY:S->O            0   0.298   0.000  cg/db/gma/Madd_fulladdr_add0002_cy<10> (cg/db/gma/Madd_fulladdr_add0002_cy<10>)
+     XORCY:CI->O           1   1.274   0.000  cg/db/gma/Madd_fulladdr_add0002_xor<11> (cg/db/gma/fulladdr_add0002<11>)
+     FDR:D                     0.370          cg/db/gma/fulladdr_11
     ----------------------------------------
-    Total                      5.851ns (3.337ns logic, 2.514ns route)
-                                       (57.0% logic, 43.0% route)
+    Total                     14.932ns (11.183ns logic, 3.748ns route)
+                                       (74.9% logic, 25.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_27mhz'
-  Total number of paths / destination ports: 847 / 222
+  Total number of paths / destination ports: 890 / 250
 -------------------------------------------------------------------------
-Offset:              7.447ns (Levels of Logic = 5)
+Offset:              7.427ns (Levels of Logic = 5)
   Source:            button_enter (PAD)
   Destination:       cg/bsm/ball_y_1 (FF)
   Destination Clock: clock_27mhz rising
@@ -1022,19 +1105,19 @@ Offset:              7.447ns (Levels of Logic = 5)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            63   0.825   1.376  button_enter_IBUF (button_enter_IBUF)
-     LUT3:I1->O           11   0.439   1.116  cg/bsm/ball_state_mux0000<1>21 (cg/bsm/N31)
+     IBUF:I->O            64   0.825   1.379  button_enter_IBUF (button_enter_IBUF)
+     LUT3:I1->O           10   0.439   1.094  cg/bsm/ball_state_mux0000<1>21 (cg/bsm/N31)
      LUT4:I1->O            8   0.439   1.125  cg/bsm/ball_y_mux0000<11>31 (cg/bsm/N24)
      LUT3:I0->O            8   0.439   0.880  cg/bsm/ball_y_mux0000<11>51 (cg/bsm/N40)
      LUT4:I3->O            1   0.439   0.000  cg/bsm/ball_y_mux0000<9>1 (cg/bsm/ball_y_mux0000<9>)
      FDE:D                     0.370          cg/bsm/ball_y_9
     ----------------------------------------
-    Total                      7.447ns (2.951ns logic, 4.496ns route)
-                                       (39.6% logic, 60.4% route)
+    Total                      7.427ns (2.951ns logic, 4.476ns route)
+                                       (39.7% logic, 60.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_27mhz'
-  Total number of paths / destination ports: 627 / 20
+  Total number of paths / destination ports: 651 / 44
 -------------------------------------------------------------------------
 Offset:              14.124ns (Levels of Logic = 20)
   Source:            cg/bsm/ball_y_2 (FF)
@@ -1063,7 +1146,7 @@ Offset:              14.124ns (Levels of Logic = 20)
      XORCY:CI->O           1   1.274   0.802  cg/bsm/Msub_closeToGlove1_sub0003_xor<15> (cg/bsm/closeToGlove1_sub0003<15>)
      LUT3:I0->O            1   0.439   0.000  cg/bsm/Mcompar_closeToGlove1_cmp_lt0005_lut<5> (cg/bsm/Mcompar_closeToGlove1_cmp_lt0005_lut<5>)
      MUXCY:S->O            1   1.187   0.726  cg/bsm/Mcompar_closeToGlove1_cmp_lt0005_cy<5> (cg/bsm/Mcompar_closeToGlove1_cmp_lt0005_cy<5>)
-     LUT3:I1->O            2   0.439   0.735  cg/bsm/closeToGlove1_SW1 (N108)
+     LUT3:I1->O            2   0.439   0.735  cg/bsm/closeToGlove1_SW1 (N150)
      LUT4:I2->O            1   0.439   0.517  cg/bsm/debug1 (led_0_OBUF)
      OBUF:I->O                 4.361          led_0_OBUF (led<0>)
     ----------------------------------------
@@ -1071,17 +1154,36 @@ Offset:              14.124ns (Levels of Logic = 20)
                                        (71.4% logic, 28.6% route)
 
 =========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Delay:               4.030ns (Levels of Logic = 2)
+  Source:            clock_27mhz (PAD)
+  Destination:       cg/db/map:clka (PAD)
+
+  Data Path: clock_27mhz to cg/db/map:clka
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUFG:I->O            1   1.414   0.517  clock_27mhz_IBUFG (clock_27mhz_IBUFG1)
+     BUFG:I->O           195   0.589   1.510  clock_27mhz_IBUFG_BUFG (clock_27mhz_IBUFG)
+    ball_color_map:clka        0.000          cg/db/map
+    ----------------------------------------
+    Total                      4.030ns (2.003ns logic, 2.027ns route)
+                                       (49.7% logic, 50.3% route)
+
+=========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.44 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 13.41 secs
  
 --> 
 
 
-Total memory usage is 479856 kilobytes
+Total memory usage is 486872 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  366 (   0 filtered)
-Number of infos    :   13 (   0 filtered)
+Number of warnings :  357 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
 

@@ -13,6 +13,12 @@ ball_color_map -aul -nt timestamp -i -p xc2v6000-bf957-4 catch.ngc catch.ngd
 Reading NGO file
 "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch2/catch
 .ngc" ...
+Loading design module
+"/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms
+/ball_color_map/ball_color_map.ngc"...
+Loading design module
+"/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms
+/ball_color_table/ball_color_table.ngc"...
 Reading in constraint information from 'labkit.ucf'...
 Gathering constraint information from source properties...
 Done.
@@ -317,7 +323,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings: 277
 
-Total memory usage is 229608 kilobytes
+Total memory usage is 232320 kilobytes
 
 Writing NGD file "catch.ngd" ...
 

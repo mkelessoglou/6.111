@@ -20,30 +20,33 @@
 //////////////////////////////////////////////////////////////////////////////////
 module draw_ball(
 	input clk,
-    input hcount,
-    input vcount,
+    input[10:0] hcount,
+    input[9:0] vcount,
     input blank,
-	 input x,
-	 input y,
+	 input[15:0] x,
+	 input[15:0] y,
 	 input[1:0] ball_state,
     output reg[23:0] pixel
     );
 	 
 	 wire[11:0] map_addr;//memory address in color map
 	 wire[3:0] table_addr;//memory address in color table
+	 reg[3:0] table_addr2;
 	 wire[23:0] prepixel;
 	 
 	 //get map address
 	 get_map_address gma(.clk(clk),.hcount(hcount),.vcount(vcount),.blank(blank),
 						.x(x),.y(y),.addr(map_addr));
 	 
+	 
 	 //get table address
 	 ball_color_map map(.clka(clk),.addra(map_addr),.douta(table_addr));
 	 
 	 //get table entry
-	 ball_color_table ctable(.clka(clk),.addra(table_addr),.douta(prepixel));
+	 ball_color_table ctable(.clka(clk),.addra(table_addr2),.douta(prepixel));
 	 
 	 always @(posedge clk) begin
+		table_addr2<=table_addr;
 		if (ball_state == 0) pixel <= prepixel;
 		else pixel <= 24'd0;
 	 end

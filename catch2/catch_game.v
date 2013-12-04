@@ -96,6 +96,8 @@ module catch_game (
 			.dist(dist),
 			.pixel_x(ballpixelx),.pixel_y(ballpixely));
 			
+	
+			
 	coords_to_pixel g1pc(.x_coord(glove1x),.y_coord(glove1y),
 			.dist(dist),
 			.pixel_x(glove1pixelx),.pixel_y(glove1pixely));
@@ -105,10 +107,16 @@ module catch_game (
 			.pixel_x(glove2pixelx),.pixel_y(glove2pixely));
 	
 	
-	blob bblob(.x(ballpixelx),.hcount(hcount),
+/*	blob bblob(.x(ballpixelx),.hcount(hcount),
 			.y(ballpixely),.vcount(vcount),
 			.color({8'hFF,16'b0}),
+			.pixel(ballpixel));*/
+			
+	draw_ball db(.clk(vclock),.hcount(hcount),.vcount(vcount),.blank(blank),
+			.x(ballpixelx),.y(ballpixely),.ball_state(ball_state),
 			.pixel(ballpixel));
+	
+	
 	
 	blob g1blob(.x(glove1pixelx),.hcount(hcount),
 			.y(glove1pixely),.vcount(vcount),
