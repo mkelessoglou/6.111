@@ -98,7 +98,7 @@
 <msg type="warning" file="Xst" num="646" delta="unknown" >Signal &lt;<arg fmt="%s" index="1">fulladdr&lt;15:12&gt;</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="643" delta="unknown" >&quot;<arg fmt="%s" index="1">../sources/get_map_address.v</arg>&quot; line <arg fmt="%d" index="2">54</arg>: The result of a <arg fmt="%d" index="3">17</arg>x<arg fmt="%d" index="4">8</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">16</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+<msg type="warning" file="Xst" num="643" delta="unknown" >&quot;<arg fmt="%s" index="1">../sources/get_map_address.v</arg>&quot; line <arg fmt="%d" index="2">59</arg>: The result of a <arg fmt="%d" index="3">17</arg>x<arg fmt="%d" index="4">8</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">16</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
 </msg>
 
 <msg type="warning" file="Xst" num="646" delta="unknown" >Signal &lt;<arg fmt="%s" index="1">throw_event</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
@@ -1049,15 +1049,6 @@
 <msg type="info" file="Xst" num="1767" delta="unknown" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 </msg>
 
-<msg type="info" file="Xst" num="2385" delta="unknown" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">Mmult_fulladdr_mult0001</arg> by adding <arg fmt="%d" index="2">1</arg> register level(s).
-</msg>
-
-<msg type="info" file="Xst" num="2385" delta="unknown" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">Mmult_fulladdr_mult0001</arg> by adding <arg fmt="%d" index="2">1</arg> register level(s).
-</msg>
-
-<msg type="info" file="Xst" num="2385" delta="unknown" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">Mmult_fulladdr_mult0001</arg> by adding <arg fmt="%d" index="2">1</arg> register level(s).
-</msg>
-
 <msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">ballvelx_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ballSM</arg>&gt;.
 </msg>
 
@@ -1119,6 +1110,42 @@
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">db1/new</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">catch</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">gma/dx_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">draw_ball</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">gma/dx_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">draw_ball</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">gma/dx_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">draw_ball</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">gma/dx_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">draw_ball</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">gma/dx_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">draw_p1</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">gma/dx_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">draw_p1</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">gma/dx_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">draw_p1</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">gma/dx_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">draw_p1</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">gma/dx_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">draw_p2</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">gma/dx_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">draw_p2</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">gma/dx_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">draw_p2</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">gma/dx_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">draw_p2</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">cg/bsm/catch_event</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">catch</arg>&gt;.

@@ -1,0 +1,13 @@
+# Output products list for <closed_hand_color_table>
+closed_hand_color_table.asy
+closed_hand_color_table.mif
+closed_hand_color_table.ngc
+closed_hand_color_table.sym
+closed_hand_color_table.v
+closed_hand_color_table.veo
+closed_hand_color_table.vhd
+closed_hand_color_table.vho
+closed_hand_color_table.xco
+closed_hand_color_table_blk_mem_gen_v2_8_xst_1.ngc_xst.xrpt
+closed_hand_color_table_flist.txt
+closed_hand_color_table_xmdf.tcl

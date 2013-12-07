@@ -1,5 +1,5 @@
 NUM_USER_FILES
-25
+28
 s
 user_file_1
 ballSM.v
@@ -54,6 +54,15 @@ user_file_24
 s
 user_file_25
 ../sources/draw_p1.v
+s
+user_file_26
+../sources/roms/closed_hand_color_table/closed_hand_color_table.xco
+s
+user_file_27
+../sources/roms/closed_hand_l_color_map/closed_hand_l_color_map.xco
+s
+user_file_28
+../sources/roms/closed_hand_color_map/closed_hand_color_map.xco
 s
 user_file_3
 catch_game.v

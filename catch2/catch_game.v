@@ -125,7 +125,7 @@ module catch_game (
 			
 	draw_p1 dp1(.clk(vclock),.hcount(hcount),.vcount(vcount),.blank(blank),
 			.x(glove1pixelx),.y(glove1pixely),.ball_state(ball_state),
-			.pixel(glove1pixel));
+			.closed(glove1closed),.pixel(glove1pixel));
 			
 	/*blob g2blob(.x(glove2pixelx),.hcount(hcount),
 			.y(glove2pixely),.vcount(vcount),
@@ -134,7 +134,7 @@ module catch_game (
 			
 	draw_p2 dp2(.clk(vclock),.hcount(hcount),.vcount(vcount),.blank(blank),
 			.x(glove2pixelx),.y(glove2pixely),.ball_state(ball_state),
-			.pixel(glove2pixel));
+			.closed(glove2closed),.pixel(glove2pixel));
 			
 	
 

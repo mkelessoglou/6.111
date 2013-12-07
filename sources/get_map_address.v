@@ -29,9 +29,16 @@ module get_map_address(
     );
 	 
 
-	 wire outofbounds;
+	 wire outofbounds1;
+	 wire outofbounds2;
+	 wire outofbounds3;
+	 wire outofbounds4;
+	 reg outofbounds;
 	 
 	 reg[15:0] fulladdr;
+	 
+	 reg[15:0] dx;
+	 reg[15:0] dy;
 	 
 	 
 	 parameter xoffset = 16'd35;
@@ -39,19 +46,21 @@ module get_map_address(
 	 
 	 
 
-		//determines whether current pixel is within object sprite
-		assign outofbounds = (blank) 
-									||((hcount < x) && hcount < x - xoffset+2)
-									||(hcount > x && hcount > x + xoffset-2)
-									||(vcount < y && vcount < y - yoffset+2)
-									||(vcount > y && vcount > y + yoffset-2); 
+		//determines whether current pixel is within object sprite 
+		assign outofbounds1 = ((hcount < x) && hcount < x - xoffset+1);
+		assign outofbounds2 = (hcount > x && hcount > x + xoffset-1);
+		assign outofbounds3 = (vcount < y && vcount < y - yoffset+1);
+		assign outofbounds4 = (vcount > y && vcount > y + yoffset-1); 
 
 	 
 	 always @(posedge clk) begin
+		outofbounds <= blank || outofbounds1 || outofbounds2 || outofbounds3 || outofbounds4;
+		dx <= (hcount + xoffset - x);
+		dy <= (vcount + yoffset - y)*70;
 		if (outofbounds) begin
 			fulladdr <= 0;
 		end else begin
-			fulladdr <= (vcount + yoffset - y)*70 + (hcount + xoffset - x);
+			fulladdr <=  dy + dx;
 		end
 		addr <= fulladdr[11:0];
 	 end
