@@ -1171,12 +1171,12 @@ clock_27mhz                        | vclk1:CLKFX            | 35    |
 
 Asynchronous Control Signals Information:
 ----------------------------------------
-------------------------------------------------------+----------------------------------+-------+
-Control Signal                                        | Buffer(FF name)                  | Load  |
-------------------------------------------------------+----------------------------------+-------+
-analyzer1_data_0_OBUF(XST_GND:G)                      | NONE(cg/db/gma/Mmult_dy_mult0001)| 3     |
-cg/dp1/gma/Madd_outofbounds1_add0000_lut<0>(XST_VCC:P)| NONE(cg/db/gma/Mmult_dy_mult0001)| 3     |
-------------------------------------------------------+----------------------------------+-------+
+------------------------------------------------------+-----------------------------------+-------+
+Control Signal                                        | Buffer(FF name)                   | Load  |
+------------------------------------------------------+-----------------------------------+-------+
+analyzer1_data_0_OBUF(XST_GND:G)                      | NONE(cg/dp1/gma/Mmult_dy_mult0001)| 3     |
+cg/dp1/gma/Madd_outofbounds1_add0000_lut<0>(XST_VCC:P)| NONE(cg/dp1/gma/Mmult_dy_mult0001)| 3     |
+------------------------------------------------------+-----------------------------------+-------+
 
 Timing Summary:
 ---------------
@@ -1303,12 +1303,12 @@ Delay:               4.613ns (Levels of Logic = 2)
 
 
 Total REAL time to Xst completion: 20.00 secs
-Total CPU time to Xst completion: 19.24 secs
+Total CPU time to Xst completion: 19.17 secs
  
 --> 
 
 
-Total memory usage is 499460 kilobytes
+Total memory usage is 499732 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  372 (   0 filtered)
