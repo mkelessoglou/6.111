@@ -858,7 +858,6 @@ proc restore { { project_dir "" } } {
       "catch_game.v" 
       "coords_to_pixel.v" 
       "debounce.v" 
-      "disp_sprites.v" 
       "flash_manager.v" 
       "global_coords.v" 
       "labkit.ucf" 

@@ -33,6 +33,7 @@ module global_coords(
     input[5:0] dist,//in meters
     input right_hand1,
     input right_hand2,
+	 input test,
     output reg[15:0] glob_glove1x,
     output reg[15:0] glob_glove1y,
     output reg[15:0] glob_glove2x,
@@ -41,14 +42,25 @@ module global_coords(
 	 
 	 //all distances except for dist are in millimeters; dist is in meters
 	 
+	 
+	 reg[17:0] update_counter; //210937
+	 
 	 ////////////////////////////////////////
 	 //TEMPORARY
 	 //hard-code fixed inputs until we get input from hand-tracking
+	 initial glob_glove1x = 16'd2000;
 	 always @(posedge clk) begin
-		glob_glove1x <= 16'd3000;
-		glob_glove1y <= 16'd1500;
+		//glob_glove1x <= 16'd3000;
+		glob_glove1y <= 16'd2000;
 		glob_glove2x <= 16'd8000;
-		glob_glove2y <= 16'd1500;
+		glob_glove2y <= 16'd2000;
+		if (update_counter == 0) begin
+			glob_glove1x <= glob_glove1x + test*20;
+			update_counter <= 210937;
+		end else begin
+			glob_glove1x <= glob_glove1x;
+			update_counter <= update_counter-1;
+		end
 	 end
 	 //////////////////////////////////////////
 

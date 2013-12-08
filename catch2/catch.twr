@@ -37,11 +37,12 @@ Setup/Hold to clock clock_27mhz
             |  Setup to  |  Hold to   |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-button0     |    8.495(R)|   -1.073(R)|clock_27mhz_IBUFG |   0.000|
-button1     |    8.797(R)|   -1.135(R)|clock_27mhz_IBUFG |   0.000|
-button_enter|    7.809(R)|   -1.924(R)|clock_27mhz_IBUFG |   0.000|
-switch<0>   |    8.564(R)|   -3.626(R)|clock_27mhz_IBUFG |   0.000|
-switch<1>   |    7.831(R)|   -1.418(R)|clock_27mhz_IBUFG |   0.000|
+button0     |    7.508(R)|   -1.423(R)|clock_27mhz_IBUFG |   0.000|
+button1     |    8.650(R)|   -2.214(R)|clock_27mhz_IBUFG |   0.000|
+button_enter|    8.038(R)|   -1.993(R)|clock_27mhz_IBUFG |   0.000|
+button_right|    4.607(R)|   -2.395(R)|clock_27mhz_IBUFG |   0.000|
+switch<0>   |    7.331(R)|   -2.550(R)|clock_27mhz_IBUFG |   0.000|
+switch<1>   |    7.602(R)|   -2.408(R)|clock_27mhz_IBUFG |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock clock_27mhz to Pad
@@ -49,34 +50,34 @@ Clock clock_27mhz to Pad
                 | clk (edge) |                  | Clock  |
 Destination     |   to PAD   |Internal Clock(s) | Phase  |
 ----------------+------------+------------------+--------+
-led<0>          |   22.479(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_blank_b |   10.869(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_blue<0> |   11.365(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_blue<1> |   11.619(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_blue<2> |   10.716(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_blue<3> |    9.891(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_blue<4> |   10.613(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_blue<5> |   10.250(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_blue<6> |   10.287(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_blue<7> |   10.285(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_green<0>|   10.772(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_green<1>|   11.728(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_green<2>|    9.854(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_green<3>|   10.508(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_green<4>|   11.793(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_green<5>|   11.033(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_green<6>|   11.356(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_green<7>|   11.079(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_hsync   |   11.705(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_red<0>  |   11.145(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_red<1>  |   11.014(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_red<2>  |   10.859(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_red<3>  |   11.087(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_red<4>  |   11.503(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_red<5>  |   10.694(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_red<6>  |   11.576(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_red<7>  |   11.132(R)|clock_27mhz_IBUFG |   0.000|
-vga_out_vsync   |   12.322(R)|clock_27mhz_IBUFG |   0.000|
+led<0>          |   21.498(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blank_b |   11.140(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<0> |   11.298(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<1> |   11.149(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<2> |   10.860(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<3> |   10.154(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<4> |   10.750(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<5> |   11.066(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<6> |    9.991(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<7> |    9.989(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<0>|   10.091(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<1>|   11.331(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<2>|   10.120(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<3>|   10.703(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<4>|   11.458(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<5>|   11.384(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<6>|   11.419(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<7>|   11.020(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_hsync   |   10.952(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<0>  |   11.408(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<1>  |   10.954(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<2>  |   11.602(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<3>  |   11.288(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<4>  |   11.769(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<5>  |   10.961(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<6>  |   11.556(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<7>  |   11.348(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_vsync   |   11.899(R)|clock_27mhz_IBUFG |   0.000|
 ----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clock_27mhz
@@ -84,7 +85,7 @@ Clock to Setup on destination clock clock_27mhz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clock_27mhz    |   15.030|         |         |         |
+clock_27mhz    |   15.314|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
@@ -95,14 +96,14 @@ clock_27mhz    |vga_out_pixel_clock|   11.472|
 ---------------+-------------------+---------+
 
 
-Analysis completed Sat Dec  7 16:28:39 2013 
+Analysis completed Sun Dec  8 13:55:43 2013 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 364 MB
+Peak Memory Usage: 367 MB
 
 
 

@@ -172,8 +172,6 @@ WARNING:PhysDesignRules:367 - The signal <clock1_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <clock2_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <button_right_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <button2_IBUF> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <button3_IBUF> is incomplete. The
@@ -1081,5 +1079,5 @@ WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
 WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
    block:<cg/dp2/ctable/BU2/U0/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v2_
    init.ram/spram.ram.B>:<RAMB16_RAMB16B>.
-DRC detected 0 errors and 470 warnings.  Please see the previously displayed
+DRC detected 0 errors and 469 warnings.  Please see the previously displayed
 individual error or warning messages for more details.

@@ -314,7 +314,7 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
 	wire game_reset;
 	
 	//will eventually be set by switches
-	assign dist = 6'd5;
+	assign dist = 6'd6;
 	assign can_catch1=1;
 	assign can_catch2=1;
 	assign glove1closed=switch[0];
@@ -328,7 +328,7 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
 					 .rel_glove1x(glove1x),.rel_glove1y(glove1y),
 					 .rel_glove2x(glove2x),.rel_glove2y(glove2y),
 					 .dist(dist),
-					 .test0(~button0),.test1(~button1),
+					 .test0(~button0),.test1(~button1),.test2(~button_right),
 					 .can_catch1(can_catch1),.can_catch2(can_catch2),
 					 .right_hand1(right_hand1),.right_hand2(right_hand2),
 		.hcount(hcount),.vcount(vcount),
