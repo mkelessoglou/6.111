@@ -1,11 +1,11 @@
 Release 10.1.03 - par K.39 (lin64)
 Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
 
-Sun Dec  8 13:55:38 2013
+Sun Dec  8 17:58:55 2013
 
 All signals are completely routed.
 
-WARNING:ParHelpers:361 - There are 329 loadless signals in this design. This design will cause Bitgen to issue DRC
+WARNING:ParHelpers:361 - There are 317 loadless signals in this design. This design will cause Bitgen to issue DRC
    warnings.
 
    ac97_bit_clock_IBUF
@@ -158,6 +158,8 @@ WARNING:ParHelpers:361 - There are 329 loadless signals in this design. This des
    ram1_data<9>_IBUF
    rs232_cts_IBUF
    rs232_rxd_IBUF
+   switch<0>_IBUF
+   switch<1>_IBUF
    switch<2>_IBUF
    switch<3>_IBUF
    switch<4>_IBUF
@@ -209,7 +211,6 @@ WARNING:ParHelpers:361 - There are 329 loadless signals in this design. This des
    tv_in_ycrcb<7>_IBUF
    tv_in_ycrcb<8>_IBUF
    tv_in_ycrcb<9>_IBUF
-   user1<0>_IBUF
    user1<10>_IBUF
    user1<11>_IBUF
    user1<12>_IBUF
@@ -220,7 +221,6 @@ WARNING:ParHelpers:361 - There are 329 loadless signals in this design. This des
    user1<17>_IBUF
    user1<18>_IBUF
    user1<19>_IBUF
-   user1<1>_IBUF
    user1<20>_IBUF
    user1<21>_IBUF
    user1<22>_IBUF
@@ -280,16 +280,7 @@ WARNING:ParHelpers:361 - There are 329 loadless signals in this design. This des
    user3<13>_IBUF
    user3<14>_IBUF
    user3<15>_IBUF
-   user3<16>_IBUF
-   user3<17>_IBUF
-   user3<18>_IBUF
-   user3<19>_IBUF
    user3<1>_IBUF
-   user3<20>_IBUF
-   user3<21>_IBUF
-   user3<22>_IBUF
-   user3<23>_IBUF
-   user3<24>_IBUF
    user3<25>_IBUF
    user3<26>_IBUF
    user3<27>_IBUF
@@ -297,7 +288,6 @@ WARNING:ParHelpers:361 - There are 329 loadless signals in this design. This des
    user3<29>_IBUF
    user3<2>_IBUF
    user3<30>_IBUF
-   user3<31>_IBUF
    user3<3>_IBUF
    user3<4>_IBUF
    user3<5>_IBUF
@@ -328,8 +318,6 @@ WARNING:ParHelpers:361 - There are 329 loadless signals in this design. This des
    user4<28>_IBUF
    user4<29>_IBUF
    user4<2>_IBUF
-   user4<30>_IBUF
-   user4<31>_IBUF
    user4<3>_IBUF
    user4<4>_IBUF
    user4<5>_IBUF

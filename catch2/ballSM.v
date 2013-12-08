@@ -44,7 +44,7 @@ module ballSM(
 	 
 	 
 	 parameter updatesPerSec = 128;
-	 parameter tolerance = 100; //within how many mms a catch can be made
+	 parameter tolerance = 300; //within how many mms a catch can be made
 	 parameter ballRadius = 50;
 	 
 	 //All distances in the inputs and outputs are in millimeters

@@ -1,7 +1,7 @@
 Release 10.1.03 - par K.39 (lin64)
 Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
 
-Sun Dec  8 13:55:38 2013
+Sun Dec  8 17:58:55 2013
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -554,7 +554,7 @@ Pinout by Pin Number:
 |G9        |user1<25>           |IOB      |IO_L20P_1             |INPUT    |LVTTL*     |1             |          |         |           |NONE     |       |LOCATED   |         |NO         |NONE            |
 |G10       |user3<25>           |IOB      |IO_L20N_1             |INPUT    |LVTTL*     |1             |          |         |           |NONE     |       |LOCATED   |         |NO         |NONE            |
 |G11       |                    |DIFFM    |IO_L52P_1             |UNUSED   |           |1             |          |         |           |         |       |          |         |           |                |
-|G12       |user3<31>           |IOB      |IO_L52N_1             |INPUT    |LVTTL*     |1             |          |         |           |NONE     |       |LOCATED   |         |NO         |NONE            |
+|G12       |user3<31>           |IOB      |IO_L52N_1             |OUTPUT   |LVTTL*     |1             |12        |SLOW     |NONE**     |         |       |LOCATED   |         |NO         |NONE            |
 |G13       |                    |         |GND                   |         |           |              |          |         |           |         |       |          |         |           |                |
 |G14       |user3<28>           |IOB      |IO_L92P_1             |INPUT    |LVTTL*     |1             |          |         |           |NONE     |       |LOCATED   |         |NO         |NONE            |
 |G15       |user1<29>           |IOB      |IO_L92N_1             |INPUT    |LVTTL*     |1             |          |         |           |NONE     |       |LOCATED   |         |NO         |NONE            |
@@ -583,7 +583,7 @@ Pinout by Pin Number:
 |H7        |daughtercard<3>     |IOB      |IO_L20N_2             |INPUT    |LVTTL*     |2             |          |         |           |NONE     |       |LOCATED   |         |NO         |NONE            |
 |H8        |                    |         |GND                   |         |           |              |          |         |           |         |       |          |         |           |                |
 |H9        |user1<24>           |IOB      |IO_L05N_1             |INPUT    |LVTTL*     |1             |          |         |           |NONE     |       |LOCATED   |         |NO         |NONE            |
-|H10       |user3<24>           |IOB      |IO_L23P_1             |INPUT    |LVTTL*     |1             |          |         |           |NONE     |       |LOCATED   |         |NO         |NONE            |
+|H10       |user3<24>           |IOB      |IO_L23P_1             |OUTPUT   |LVTTL*     |1             |12        |SLOW     |NONE**     |         |       |LOCATED   |         |NO         |NONE            |
 |H11       |user1<26>           |IOB      |IO_L23N_1             |INPUT    |LVTTL*     |1             |          |         |           |NONE     |       |LOCATED   |         |NO         |NONE            |
 |H12       |                    |DIFFM    |IO_L69P_1             |UNUSED   |           |1             |          |         |           |         |       |          |         |           |                |
 |H13       |user3<30>           |IOB      |IO_L69N_1/VREF_1      |INPUT    |LVTTL*     |1             |          |         |           |NONE     |       |LOCATED   |         |NO         |NONE            |

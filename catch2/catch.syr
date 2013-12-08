@@ -155,6 +155,9 @@ Module <debounce> compiled
 Compiling verilog file "catch.v" in library work
 Module <catch_game> compiled
 Module <catch> compiled
+Module <canCatch> compiled
+Module <clk_divide> compiled
+Module <display_16hex> compiled
 No errors in compilation
 Analysis of file <"catch.prj"> succeeded.
  
@@ -168,13 +171,19 @@ Analyzing hierarchy for module <debounce> in library <work>.
 
 Analyzing hierarchy for module <xvga> in library <work>.
 
+Analyzing hierarchy for module <clk_divide> in library <work>.
+
+Analyzing hierarchy for module <canCatch> in library <work>.
+
+Analyzing hierarchy for module <display_16hex> in library <work>.
+
 Analyzing hierarchy for module <catch_game> in library <work>.
 
 Analyzing hierarchy for module <global_coords> in library <work>.
 
 Analyzing hierarchy for module <ballSM> in library <work> with parameters.
 	ballRadius = "00000000000000000000000000110010"
-	tolerance = "00000000000000000000000001100100"
+	tolerance = "00000000000000000000000100101100"
 	updatesPerSec = "00000000000000000000000010000000"
 
 Analyzing hierarchy for module <coords_to_pixel> in library <work>.
@@ -189,10 +198,10 @@ Analyzing hierarchy for module <get_map_address> in library <work> with paramete
 	xoffset = "0000000000100011"
 	yoffset = "0000000000011001"
 
-WARNING:Xst:2591 - "catch.v" line 267: attribute on instance <CLKFX_DIVIDE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "catch.v" line 267: attribute on instance <CLKFX_MULTIPLY> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "catch.v" line 267: attribute on instance <CLKIN_PERIOD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "catch.v" line 267: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "catch.v" line 269: attribute on instance <CLKFX_DIVIDE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "catch.v" line 269: attribute on instance <CLKFX_MULTIPLY> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "catch.v" line 269: attribute on instance <CLKIN_PERIOD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "catch.v" line 269: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 
 =========================================================================
 *                            HDL Analysis                               *
@@ -223,6 +232,16 @@ Module <debounce> is correct for synthesis.
 Analyzing module <xvga> in library <work>.
 Module <xvga> is correct for synthesis.
  
+Analyzing module <clk_divide> in library <work>.
+Module <clk_divide> is correct for synthesis.
+ 
+Analyzing module <canCatch> in library <work>.
+Module <canCatch> is correct for synthesis.
+ 
+Analyzing module <display_16hex> in library <work>.
+INFO:Xst:1433 - Contents of array <dots> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Module <display_16hex> is correct for synthesis.
+ 
 Analyzing module <catch_game> in library <work>.
 Module <catch_game> is correct for synthesis.
  
@@ -231,7 +250,7 @@ Module <global_coords> is correct for synthesis.
  
 Analyzing module <ballSM> in library <work>.
 	ballRadius = 32'sb00000000000000000000000000110010
-	tolerance = 32'sb00000000000000000000000001100100
+	tolerance = 32'sb00000000000000000000000100101100
 	updatesPerSec = 32'sb00000000000000000000000010000000
 Module <ballSM> is correct for synthesis.
  
@@ -262,7 +281,35 @@ INFO:Xst:2561 - Always blocking tristate driving signal <flash_data> in unit <ca
 INFO:Xst:2561 - Always blocking tristate driving signal <ram0_data> in unit <catch> is removed.
 INFO:Xst:2561 - Always blocking tristate driving signal <user1> in unit <catch> is removed.
 INFO:Xst:2561 - Always blocking tristate driving signal <user2> in unit <catch> is removed.
-INFO:Xst:2561 - Always blocking tristate driving signal <user3> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
+INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
 INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <catch> is removed.
 INFO:Xst:2561 - Always blocking tristate driving signal <ram1_data> in unit <catch> is removed.
 INFO:Xst:2561 - Always blocking tristate driving signal <daughtercard> in unit <catch> is removed.
@@ -294,6 +341,66 @@ Synthesizing Unit <xvga>.
 	inferred   2 Counter(s).
 	inferred   5 D-type flip-flop(s).
 Unit <xvga> synthesized.
+
+
+Synthesizing Unit <clk_divide>.
+    Related source file is "catch.v".
+    Found 1-bit register for signal <adcClk>.
+    Found 8-bit up counter for signal <counter>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <clk_divide> synthesized.
+
+
+Synthesizing Unit <canCatch>.
+    Related source file is "catch.v".
+    Found 1-bit register for signal <canCatch>.
+    Found 8-bit comparator greater for signal <canCatch$cmp_gt0000> created at line 407.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <canCatch> synthesized.
+
+
+Synthesizing Unit <display_16hex>.
+    Related source file is "catch.v".
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clock (rising_edge)                            |
+    | Reset              | dreset (positive)                              |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00000000                                       |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16x40-bit ROM for signal <dots>.
+    Found 1-bit register for signal <disp_ce_b>.
+    Found 1-bit register for signal <disp_data_out>.
+    Found 1-bit register for signal <disp_rs>.
+    Found 1-bit register for signal <disp_reset_b>.
+    Found 1-bit 40-to-1 multiplexer for signal <$varindex0000> created at line 563.
+    Found 4-bit register for signal <char_index>.
+    Found 4-bit subtractor for signal <char_index$addsub0000> created at line 569.
+    Found 1-bit register for signal <clock>.
+    Found 32-bit register for signal <control>.
+    Found 5-bit up counter for signal <count>.
+    Found 10-bit register for signal <dot_index>.
+    Found 10-bit addsub for signal <dot_index$share0000> created at line 498.
+    Found 4-bit 16-to-1 multiplexer for signal <nibble>.
+    Found 8-bit down counter for signal <reset_count>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 ROM(s).
+	inferred   2 Counter(s).
+	inferred  51 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   5 Multiplexer(s).
+Unit <display_16hex> synthesized.
 
 
 Synthesizing Unit <global_coords>.
@@ -389,10 +496,10 @@ Synthesizing Unit <coords_to_pixel>.
 WARNING:Xst:646 - Signal <powerOf2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 10-bit adder for signal <pixel_y>.
     Found 6-bit adder carry out for signal <maxdist$addsub0000>.
-    Found 7-bit comparator less for signal <old_powerOf2_1$cmp_lt0000> created at line 41.
-    Found 7-bit comparator less for signal <old_powerOf2_1$cmp_lt0001> created at line 42.
-    Found 7-bit comparator less for signal <old_powerOf2_1$cmp_lt0002> created at line 43.
-    Found 7-bit comparator less for signal <old_powerOf2_1$cmp_lt0003> created at line 44.
+    Found 7-bit comparator less for signal <old_powerOf2_3$cmp_lt0000> created at line 41.
+    Found 7-bit comparator less for signal <old_powerOf2_3$cmp_lt0001> created at line 42.
+    Found 7-bit comparator less for signal <old_powerOf2_3$cmp_lt0002> created at line 43.
+    Found 7-bit comparator less for signal <old_powerOf2_3$cmp_lt0003> created at line 44.
     Found 16-bit shifter logical right for signal <pixel_x$shift0000> created at line 48.
     Found 32-bit shifter logical right for signal <pixel_y$shift0000> created at line 49.
     Summary:
@@ -506,15 +613,9 @@ Unit <catch_game> synthesized.
 Synthesizing Unit <catch>.
     Related source file is "catch.v".
 WARNING:Xst:2565 - Inout <user3<28>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<4>> is never assigned.
 WARNING:Xst:2565 - Inout <user3<29>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<5>> is never assigned.
 WARNING:Xst:647 - Input <button2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <button3> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:2565 - Inout <user3<6>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<7>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<8>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<9>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<10>> is never assigned.
 WARNING:Xst:2565 - Inout <flash_data<10>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<11>> is never assigned.
@@ -578,14 +679,12 @@ WARNING:Xst:2565 - Inout <user2<16>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<41>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<36>> is never assigned.
 WARNING:Xst:2565 - Inout <flash_data<8>> is never assigned.
-WARNING:Xst:2565 - Inout <user1<0>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<3>> is never assigned.
 WARNING:Xst:2565 - Inout <user2<17>> is never assigned.
 WARNING:Xst:2565 - Inout <user2<22>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<37>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<42>> is never assigned.
 WARNING:Xst:2565 - Inout <flash_data<9>> is never assigned.
-WARNING:Xst:2565 - Inout <user1<1>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<4>> is never assigned.
 WARNING:Xst:2565 - Inout <user2<23>> is never assigned.
 WARNING:Xst:2565 - Inout <user2<18>> is never assigned.
@@ -623,7 +722,7 @@ WARNING:Xst:2565 - Inout <user1<9>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<0>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<10>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<1>> is never assigned.
-WARNING:Xst:647 - Input <switch<7:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <switch> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:2565 - Inout <user4<11>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<2>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<12>> is never assigned.
@@ -657,13 +756,11 @@ WARNING:Xst:2565 - Inout <user4<24>> is never assigned.
 WARNING:Xst:2565 - Inout <ram1_data<13>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<0>> is never assigned.
 WARNING:Xst:2565 - Inout <ram0_data<4>> is never assigned.
-WARNING:Xst:2565 - Inout <user4<30>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<25>> is never assigned.
 WARNING:Xst:2565 - Inout <ram1_data<14>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<1>> is never assigned.
 WARNING:Xst:2565 - Inout <ram0_data<5>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<26>> is never assigned.
-WARNING:Xst:2565 - Inout <user4<31>> is never assigned.
 WARNING:Xst:2565 - Inout <ram1_data<20>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<2>> is never assigned.
 WARNING:Xst:2565 - Inout <ram1_data<15>> is never assigned.
@@ -782,32 +879,14 @@ WARNING:Xst:2565 - Inout <ram1_data<9>> is never assigned.
 WARNING:Xst:2565 - Inout <ram0_data<34>> is never assigned.
 WARNING:Xst:2565 - Inout <ram0_data<29>> is never assigned.
 WARNING:Xst:2565 - Inout <ram0_data<35>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<10>> is never assigned.
 WARNING:Xst:647 - Input <mouse_clock> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:2565 - Inout <user3<11>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<12>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<13>> is never assigned.
 WARNING:Xst:647 - Input <ac97_bit_clock> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:2565 - Inout <user3<14>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<20>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<15>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<21>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<16>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<22>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<17>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<23>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<18>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<24>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<19>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<0>> is never assigned.
 WARNING:Xst:2565 - Inout <user3<30>> is never assigned.
 WARNING:Xst:2565 - Inout <user3<25>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<1>> is never assigned.
 WARNING:Xst:2565 - Inout <user3<26>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<31>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<2>> is never assigned.
 WARNING:Xst:2565 - Inout <user3<27>> is never assigned.
-WARNING:Xst:2565 - Inout <user3<3>> is never assigned.
+WARNING:Xst:646 - Signal <yData> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <xData> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <up> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <right_hand2> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:653 - Signal <right_hand1> is used but never assigned. This sourceless signal will be automatically connected to value 0.
@@ -816,6 +895,8 @@ WARNING:Xst:653 - Signal <glove2x> is used but never assigned. This sourceless s
 WARNING:Xst:653 - Signal <glove1y> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:653 - Signal <glove1x> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:646 - Signal <down> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <clock_27_mhz> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <canCatchClean> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <border> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 1-bit register for signal <b>.
     Found 1-bit register for signal <hs>.
@@ -831,11 +912,14 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 HDL Synthesis Report
 
 Macro Statistics
+# ROMs                                                 : 1
+ 16x40-bit ROM                                         : 1
 # Multipliers                                          : 3
  17x8-bit multiplier                                   : 3
-# Adders/Subtractors                                   : 62
+# Adders/Subtractors                                   : 64
  10-bit adder                                          : 3
  10-bit adder carry out                                : 3
+ 10-bit addsub                                         : 1
  11-bit adder carry out                                : 3
  16-bit adder                                          : 5
  16-bit adder carry out                                : 6
@@ -845,22 +929,28 @@ Macro Statistics
  18-bit adder                                          : 6
  18-bit subtractor                                     : 14
  19-bit subtractor                                     : 6
+ 4-bit subtractor                                      : 1
  6-bit adder carry out                                 : 3
-# Counters                                             : 7
+# Counters                                             : 11
  10-bit up counter                                     : 1
  11-bit up counter                                     : 1
  18-bit down counter                                   : 2
- 20-bit up counter                                     : 3
+ 20-bit up counter                                     : 4
+ 5-bit up counter                                      : 1
+ 8-bit down counter                                    : 1
+ 8-bit up counter                                      : 1
 # Accumulators                                         : 1
  16-bit up accumulator                                 : 1
-# Registers                                            : 78
- 1-bit register                                        : 44
+# Registers                                            : 90
+ 1-bit register                                        : 53
+ 10-bit register                                       : 1
  12-bit register                                       : 6
  16-bit register                                       : 15
  2-bit register                                        : 1
  24-bit register                                       : 5
- 4-bit register                                        : 7
-# Comparators                                          : 62
+ 32-bit register                                       : 1
+ 4-bit register                                        : 8
+# Comparators                                          : 63
  16-bit comparator greatequal                          : 5
  16-bit comparator greater                             : 9
  16-bit comparator less                                : 12
@@ -871,11 +961,15 @@ Macro Statistics
  2-bit comparator greater                              : 1
  2-bit comparator lessequal                            : 1
  7-bit comparator less                                 : 12
+ 8-bit comparator greater                              : 1
+# Multiplexers                                         : 2
+ 1-bit 40-to-1 multiplexer                             : 1
+ 4-bit 16-to-1 multiplexer                             : 1
 # Logic shifters                                       : 6
  16-bit shifter logical right                          : 3
  32-bit shifter logical right                          : 3
-# Xors                                                 : 3
- 1-bit xor2                                            : 3
+# Xors                                                 : 4
+ 1-bit xor2                                            : 4
 
 =========================================================================
 
@@ -883,6 +977,19 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <display1/state/FSM> on signal <state[1:3]> with sequential encoding.
+----------------------
+ State    | Encoding
+----------------------
+ 00000000 | 000
+ 00000001 | 001
+ 00000010 | 010
+ 00000011 | 011
+ 00000100 | 100
+ 00000101 | 101
+ 00000110 | 110
+----------------------
 Loading device for application Rf_Device from file '2v6000.nph' in environment /afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE.
 
 Synthesizing (advanced) Unit <get_map_address>.
@@ -901,8 +1008,10 @@ WARNING:Xst:2677 - Node <fulladdr_12> of sequential type is unconnected in block
 WARNING:Xst:2677 - Node <fulladdr_13> of sequential type is unconnected in block <get_map_address>.
 WARNING:Xst:2677 - Node <fulladdr_14> of sequential type is unconnected in block <get_map_address>.
 WARNING:Xst:2677 - Node <fulladdr_15> of sequential type is unconnected in block <get_map_address>.
+WARNING:Xst:1710 - FF/Latch <new> (without init value) has a constant value of 0 in block <d0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <clean> of sequential type is unconnected in block <db2>.
 WARNING:Xst:2677 - Node <clean> of sequential type is unconnected in block <db3>.
+WARNING:Xst:2677 - Node <clean> of sequential type is unconnected in block <d0>.
 WARNING:Xst:2677 - Node <catch_event> of sequential type is unconnected in block <bsm>.
 WARNING:Xst:2677 - Node <throw_event> of sequential type is unconnected in block <bsm>.
 
@@ -910,11 +1019,14 @@ WARNING:Xst:2677 - Node <throw_event> of sequential type is unconnected in block
 Advanced HDL Synthesis Report
 
 Macro Statistics
+# ROMs                                                 : 1
+ 16x40-bit ROM                                         : 1
 # Multipliers                                          : 3
  17x8-bit registered multiplier                        : 3
-# Adders/Subtractors                                   : 62
+# Adders/Subtractors                                   : 64
  10-bit adder                                          : 3
  10-bit adder carry out                                : 3
+ 10-bit addsub                                         : 1
  11-bit adder carry out                                : 3
  16-bit adder                                          : 5
  16-bit adder carry out                                : 6
@@ -924,18 +1036,22 @@ Macro Statistics
  18-bit adder                                          : 6
  18-bit subtractor                                     : 14
  19-bit subtractor                                     : 6
+ 4-bit subtractor                                      : 1
  6-bit adder carry out                                 : 3
  9-bit subtractor                                      : 4
-# Counters                                             : 7
+# Counters                                             : 11
  10-bit up counter                                     : 1
  11-bit up counter                                     : 1
  18-bit down counter                                   : 2
- 20-bit up counter                                     : 3
+ 20-bit up counter                                     : 4
+ 5-bit up counter                                      : 1
+ 8-bit down counter                                    : 1
+ 8-bit up counter                                      : 1
 # Accumulators                                         : 1
  16-bit up accumulator                                 : 1
-# Registers                                            : 439
- Flip-Flops                                            : 439
-# Comparators                                          : 62
+# Registers                                            : 497
+ Flip-Flops                                            : 497
+# Comparators                                          : 63
  16-bit comparator greatequal                          : 5
  16-bit comparator greater                             : 9
  16-bit comparator less                                : 12
@@ -946,17 +1062,23 @@ Macro Statistics
  2-bit comparator greater                              : 1
  2-bit comparator lessequal                            : 1
  7-bit comparator less                                 : 12
+ 8-bit comparator greater                              : 1
+# Multiplexers                                         : 2
+ 1-bit 40-to-1 multiplexer                             : 1
+ 4-bit 16-to-1 multiplexer                             : 1
 # Logic shifters                                       : 6
  16-bit shifter logical right                          : 3
  32-bit shifter logical right                          : 3
-# Xors                                                 : 3
- 1-bit xor2                                            : 3
+# Xors                                                 : 4
+ 1-bit xor2                                            : 4
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:2677 - Node <d0/clean> of sequential type is unconnected in block <catch>.
+WARNING:Xst:2677 - Node <d0/new> of sequential type is unconnected in block <catch>.
 WARNING:Xst:2677 - Node <db3/clean> of sequential type is unconnected in block <catch>.
 WARNING:Xst:2677 - Node <db3/new> of sequential type is unconnected in block <catch>.
 WARNING:Xst:2677 - Node <db2/clean> of sequential type is unconnected in block <catch>.
@@ -981,6 +1103,8 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <gc/glob_glove1x_1> 
 Optimizing unit <catch> ...
 
 Optimizing unit <xvga> ...
+
+Optimizing unit <display_16hex> ...
 
 Optimizing unit <ballSM> ...
 
@@ -1015,6 +1139,10 @@ Processing Unit <catch> :
 	Found 7-bit shift register for signal <hs>.
 	Found 7-bit shift register for signal <vs>.
 	Found 7-bit shift register for signal <b>.
+	Found 7-bit shift register for signal <display1/control_30>.
+	Found 7-bit shift register for signal <display1/control_22>.
+	Found 7-bit shift register for signal <display1/control_14>.
+	Found 7-bit shift register for signal <display1/control_6>.
 	Found 2-bit shift register for signal <cg/dp2/map_addr2_0>.
 	Found 2-bit shift register for signal <cg/dp2/map_addr2_1>.
 	Found 2-bit shift register for signal <cg/dp2/map_addr2_2>.
@@ -1057,11 +1185,11 @@ Unit <catch> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 407
- Flip-Flops                                            : 407
-# Shift Registers                                      : 39
+# Registers                                            : 456
+ Flip-Flops                                            : 456
+# Shift Registers                                      : 43
  2-bit shift register                                  : 36
- 7-bit shift register                                  : 3
+ 7-bit shift register                                  : 7
 
 =========================================================================
 
@@ -1090,37 +1218,42 @@ Design Statistics
 # IOs                              : 576
 
 Cell Usage :
-# BELS                             : 2875
+# BELS                             : 3149
 #      GND                         : 1
-#      INV                         : 216
-#      LUT1                        : 155
-#      LUT2                        : 398
+#      INV                         : 241
+#      LUT1                        : 170
+#      LUT2                        : 420
 #      LUT2_D                      : 2
-#      LUT3                        : 193
+#      LUT3                        : 235
 #      LUT3_D                      : 4
 #      LUT3_L                      : 1
-#      LUT4                        : 427
+#      LUT4                        : 537
 #      LUT4_D                      : 3
 #      LUT4_L                      : 2
-#      MUXCY                       : 890
-#      MUXF5                       : 108
+#      MUXCY                       : 920
+#      MUXF5                       : 117
+#      MUXF6                       : 4
+#      MUXF7                       : 1
 #      VCC                         : 1
-#      XORCY                       : 474
-# FlipFlops/Latches                : 446
+#      XORCY                       : 490
+# FlipFlops/Latches                : 509
 #      FD                          : 201
-#      FDE                         : 91
-#      FDR                         : 86
-#      FDRE                        : 22
+#      FDE                         : 105
+#      FDR                         : 112
+#      FDRE                        : 26
+#      FDRS                        : 9
 #      FDRSE                       : 16
 #      FDS                         : 30
-# Shift Registers                  : 40
+#      FDSE                        : 10
+# Shift Registers                  : 44
 #      SRL16                       : 40
-# Clock Buffers                    : 2
-#      BUFG                        : 2
-# IO Buffers                       : 247
-#      IBUF                        : 6
+#      SRL16E                      : 4
+# Clock Buffers                    : 3
+#      BUFG                        : 3
+# IO Buffers                       : 259
+#      IBUF                        : 16
 #      IBUFG                       : 1
-#      OBUF                        : 240
+#      OBUF                        : 242
 # DCMs                             : 1
 #      DCM                         : 1
 # MULTs                            : 3
@@ -1145,15 +1278,15 @@ Device utilization summary:
 
 Selected Device : 2v6000bf957-4 
 
- Number of Slices:                      796  out of  33792     2%  
- Number of Slice Flip Flops:            446  out of  67584     0%  
- Number of 4 input LUTs:               1441  out of  67584     2%  
-    Number used as logic:              1401
-    Number used as Shift registers:      40
+ Number of Slices:                      880  out of  33792     2%  
+ Number of Slice Flip Flops:            509  out of  67584     0%  
+ Number of 4 input LUTs:               1659  out of  67584     2%  
+    Number used as logic:              1615
+    Number used as Shift registers:      44
  Number of IOs:                         576
- Number of bonded IOBs:                 247  out of    684    36%  
+ Number of bonded IOBs:                 259  out of    684    37%  
  Number of MULT18X18s:                    3  out of    144     2%  
- Number of GCLKs:                         2  out of     16    12%  
+ Number of GCLKs:                         3  out of     16    18%  
  Number of DCMs:                          1  out of     12     8%  
 
 ---------------------------
@@ -1177,8 +1310,9 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clock_27mhz                        | IBUFG+BUFG             | 452   |
+clock_27mhz                        | IBUFG+BUFG             | 476   |
 clock_27mhz                        | vclk1:CLKFX            | 37    |
+display1/clock1                    | BUFG                   | 43    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1195,9 +1329,9 @@ Timing Summary:
 Speed Grade: -4
 
    Minimum period: 66.618ns (Maximum Frequency: 15.011MHz)
-   Minimum input arrival time before clock: 7.583ns
-   Maximum output required time after clock: 14.087ns
-   Maximum combinational path delay: 4.696ns
+   Minimum input arrival time before clock: 13.651ns
+   Maximum output required time after clock: 14.302ns
+   Maximum combinational path delay: 4.758ns
 
 Timing Detail:
 --------------
@@ -1206,7 +1340,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock_27mhz'
   Clock period: 66.618ns (frequency: 15.011MHz)
-  Total number of paths / destination ports: 27129 / 777
+  Total number of paths / destination ports: 29162 / 823
 -------------------------------------------------------------------------
 Delay:               11.103ns (Levels of Logic = 8)
   Source:            xvga1/vcount_7_1 (FF)
@@ -1219,8 +1353,8 @@ Delay:               11.103ns (Levels of Logic = 8)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDRE:C->Q             5   0.568   1.056  xvga1/vcount_7_1 (xvga1/vcount_7_1)
-     LUT3:I0->O            1   0.439   0.802  cg/dp2/gma/Madd_dy_addsub0001_xor<9>111_SW0 (N305)
-     LUT4:I0->O            4   0.439   0.781  cg/db/gma/Madd_dy_addsub0001_xor<9>1_SW0 (N273)
+     LUT3:I0->O            1   0.439   0.802  cg/dp2/gma/Madd_dy_addsub0001_xor<9>111_SW0 (N383)
+     LUT4:I0->O            4   0.439   0.781  cg/db/gma/Madd_dy_addsub0001_xor<9>1_SW0 (N337)
      LUT4:I2->O            0   0.439   0.000  cg/dp2/gma/Madd_dy_addsub0001_xor<8>1 (cg/dp2/gma/dy_addsub0001<8>)
      MUXCY:DI->O           1   0.462   0.000  cg/dp2/gma/Msub_dy_addsub0000_cy<8> (cg/dp2/gma/Msub_dy_addsub0000_cy<8>)
      MUXCY:CI->O           1   0.053   0.000  cg/dp2/gma/Msub_dy_addsub0000_cy<9> (cg/dp2/gma/Msub_dy_addsub0000_cy<9>)
@@ -1233,10 +1367,45 @@ Delay:               11.103ns (Levels of Logic = 8)
                                        (69.1% logic, 30.9% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_27mhz'
-  Total number of paths / destination ports: 1246 / 336
+Timing constraint: Default period analysis for Clock 'display1/clock1'
+  Clock period: 13.439ns (frequency: 74.409MHz)
+  Total number of paths / destination ports: 3530 / 72
 -------------------------------------------------------------------------
-Offset:              7.583ns (Levels of Logic = 5)
+Delay:               13.439ns (Levels of Logic = 14)
+  Source:            display1/char_index_0 (FF)
+  Destination:       display1/disp_data_out (FF)
+  Source Clock:      display1/clock1 rising
+  Destination Clock: display1/clock1 rising
+
+  Data Path: display1/char_index_0 to display1/disp_data_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             10   0.568   1.170  display1/char_index_0 (display1/char_index_0)
+     LUT3:I0->O            1   0.439   0.726  display1/Mmux_nibble_8 (display1/Mmux_nibble_8)
+     LUT4:I1->O            1   0.439   0.000  display1/Mmux_nibble_4 (display1/Mmux_nibble_4)
+     MUXF5:I0->O          28   0.436   1.362  display1/Mmux_nibble_2_f5 (display1/nibble<0>)
+     LUT4:I0->O            2   0.439   0.910  display1/Mrom_dots171 (display1/Mrom_dots17)
+     LUT3:I1->O            1   0.439   0.000  display1/Mmux__varindex0000_122 (display1/Mmux__varindex0000_122)
+     MUXF5:I1->O           1   0.436   0.000  display1/Mmux__varindex0000_11_f5_0 (display1/Mmux__varindex0000_11_f51)
+     MUXF6:I1->O           1   0.447   0.000  display1/Mmux__varindex0000_10_f6 (display1/Mmux__varindex0000_10_f6)
+     MUXF7:I0->O           1   0.447   0.726  display1/Mmux__varindex0000_8_f7 (display1/Mmux__varindex0000_8_f7)
+     LUT2:I1->O            1   0.439   0.000  display1/disp_data_out_mux0000782 (display1/disp_data_out_mux0000782)
+     MUXF5:I0->O           1   0.436   0.552  display1/disp_data_out_mux000078_f5 (display1/disp_data_out_mux000078)
+     LUT3:I2->O            1   0.439   0.000  display1/disp_data_out_mux0000131_G (N662)
+     MUXF5:I1->O           2   0.436   0.910  display1/disp_data_out_mux0000131 (display1/disp_data_out_mux0000131)
+     LUT2:I1->O            1   0.439   0.000  display1/disp_data_out_mux00001692 (display1/disp_data_out_mux00001691)
+     MUXF5:I0->O           1   0.436   0.000  display1/disp_data_out_mux0000169_f5 (display1/disp_data_out_mux0000)
+     FDE:D                     0.370          display1/disp_data_out
+    ----------------------------------------
+    Total                     13.439ns (7.085ns logic, 6.354ns route)
+                                       (52.7% logic, 47.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_27mhz'
+  Total number of paths / destination ports: 1347 / 337
+-------------------------------------------------------------------------
+Offset:              7.460ns (Levels of Logic = 5)
   Source:            button_enter (PAD)
   Destination:       cg/bsm/ball_y_1 (FF)
   Destination Clock: clock_27mhz rising
@@ -1246,20 +1415,53 @@ Offset:              7.583ns (Levels of Logic = 5)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O            59   0.825   1.366  button_enter_IBUF (button_enter_IBUF)
-     LUT3:I1->O            9   0.439   1.147  cg/bsm/ball_state_mux0000<1>21 (cg/bsm/N32)
-     LUT4:I0->O           13   0.439   1.240  cg/bsm/ball_x_mux0000<0>31 (cg/bsm/N36)
-     LUT3:I0->O            8   0.439   0.880  cg/bsm/ball_y_mux0000<11>21 (cg/bsm/N42)
+     LUT3:I1->O            7   0.439   1.101  cg/bsm/ball_state_mux0000<1>21 (cg/bsm/N32)
+     LUT4:I0->O           13   0.439   1.162  cg/bsm/ball_x_mux0000<0>31 (cg/bsm/N36)
+     LUT3:I1->O            8   0.439   0.880  cg/bsm/ball_y_mux0000<11>21 (cg/bsm/N42)
      LUT4:I3->O            1   0.439   0.000  cg/bsm/ball_y_mux0000<5>1 (cg/bsm/ball_y_mux0000<5>)
      FDE:D                     0.370          cg/bsm/ball_y_5
     ----------------------------------------
-    Total                      7.583ns (2.951ns logic, 4.632ns route)
-                                       (38.9% logic, 61.1% route)
+    Total                      7.460ns (2.951ns logic, 4.509ns route)
+                                       (39.6% logic, 60.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'display1/clock1'
+  Total number of paths / destination ports: 664 / 1
+-------------------------------------------------------------------------
+Offset:              13.651ns (Levels of Logic = 15)
+  Source:            user4<31> (PAD)
+  Destination:       display1/disp_data_out (FF)
+  Destination Clock: display1/clock1 rising
+
+  Data Path: user4<31> to display1/disp_data_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            31   0.825   1.293  user4_31_IBUF (user4_31_IBUF)
+     LUT3:I1->O            1   0.439   0.557  display1/Mmux_nibble_9 (display1/Mmux_nibble_9)
+     LUT4:I3->O            1   0.439   0.000  display1/Mmux_nibble_4 (display1/Mmux_nibble_4)
+     MUXF5:I0->O          28   0.436   1.362  display1/Mmux_nibble_2_f5 (display1/nibble<0>)
+     LUT4:I0->O            2   0.439   0.910  display1/Mrom_dots171 (display1/Mrom_dots17)
+     LUT3:I1->O            1   0.439   0.000  display1/Mmux__varindex0000_122 (display1/Mmux__varindex0000_122)
+     MUXF5:I1->O           1   0.436   0.000  display1/Mmux__varindex0000_11_f5_0 (display1/Mmux__varindex0000_11_f51)
+     MUXF6:I1->O           1   0.447   0.000  display1/Mmux__varindex0000_10_f6 (display1/Mmux__varindex0000_10_f6)
+     MUXF7:I0->O           1   0.447   0.726  display1/Mmux__varindex0000_8_f7 (display1/Mmux__varindex0000_8_f7)
+     LUT2:I1->O            1   0.439   0.000  display1/disp_data_out_mux0000782 (display1/disp_data_out_mux0000782)
+     MUXF5:I0->O           1   0.436   0.552  display1/disp_data_out_mux000078_f5 (display1/disp_data_out_mux000078)
+     LUT3:I2->O            1   0.439   0.000  display1/disp_data_out_mux0000131_G (N662)
+     MUXF5:I1->O           2   0.436   0.910  display1/disp_data_out_mux0000131 (display1/disp_data_out_mux0000131)
+     LUT2:I1->O            1   0.439   0.000  display1/disp_data_out_mux00001692 (display1/disp_data_out_mux00001691)
+     MUXF5:I0->O           1   0.436   0.000  display1/disp_data_out_mux0000169_f5 (display1/disp_data_out_mux0000)
+     FDE:D                     0.370          display1/disp_data_out
+    ----------------------------------------
+    Total                     13.651ns (7.342ns logic, 6.309ns route)
+                                       (53.8% logic, 46.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_27mhz'
-  Total number of paths / destination ports: 1332 / 140
+  Total number of paths / destination ports: 1334 / 142
 -------------------------------------------------------------------------
-Offset:              14.087ns (Levels of Logic = 18)
+Offset:              14.302ns (Levels of Logic = 17)
   Source:            cg/gc/glob_glove1x_4 (FF)
   Destination:       led<0> (PAD)
   Source Clock:      clock_27mhz rising
@@ -1279,23 +1481,41 @@ Offset:              14.087ns (Levels of Logic = 18)
      MUXCY:CI->O           1   0.053   0.000  cg/bsm/Msub_closeToGlove1_sub0001_cy<10> (cg/bsm/Msub_closeToGlove1_sub0001_cy<10>)
      MUXCY:CI->O           1   0.053   0.000  cg/bsm/Msub_closeToGlove1_sub0001_cy<11> (cg/bsm/Msub_closeToGlove1_sub0001_cy<11>)
      MUXCY:CI->O           1   0.053   0.000  cg/bsm/Msub_closeToGlove1_sub0001_cy<12> (cg/bsm/Msub_closeToGlove1_sub0001_cy<12>)
-     MUXCY:CI->O           1   0.053   0.000  cg/bsm/Msub_closeToGlove1_sub0001_cy<13> (cg/bsm/Msub_closeToGlove1_sub0001_cy<13>)
-     MUXCY:CI->O           1   0.053   0.000  cg/bsm/Msub_closeToGlove1_sub0001_cy<14> (cg/bsm/Msub_closeToGlove1_sub0001_cy<14>)
-     XORCY:CI->O           1   1.274   0.802  cg/bsm/Msub_closeToGlove1_sub0001_xor<15> (cg/bsm/closeToGlove1_sub0001<15>)
-     LUT3:I0->O            1   0.439   0.000  cg/bsm/Mcompar_closeToGlove1_cmp_lt0002_lut<5> (cg/bsm/Mcompar_closeToGlove1_cmp_lt0002_lut<5>)
-     MUXCY:S->O            1   1.187   0.726  cg/bsm/Mcompar_closeToGlove1_cmp_lt0002_cy<5> (cg/bsm/Mcompar_closeToGlove1_cmp_lt0002_cy<5>)
-     LUT3:I1->O            2   0.439   0.741  cg/bsm/closeToGlove1_SW0 (N517)
-     LUT4:I3->O            1   0.439   0.517  cg/bsm/debug1 (led_0_OBUF)
+     XORCY:CI->O           1   1.274   0.802  cg/bsm/Msub_closeToGlove1_sub0001_xor<13> (cg/bsm/closeToGlove1_sub0001<13>)
+     LUT4:I0->O            1   0.439   0.000  cg/bsm/Mcompar_closeToGlove1_cmp_lt0002_lut<6> (cg/bsm/Mcompar_closeToGlove1_cmp_lt0002_lut<6>)
+     MUXCY:S->O            1   0.298   0.000  cg/bsm/Mcompar_closeToGlove1_cmp_lt0002_cy<6> (cg/bsm/Mcompar_closeToGlove1_cmp_lt0002_cy<6>)
+     MUXCY:CI->O           1   0.942   0.726  cg/bsm/Mcompar_closeToGlove1_cmp_lt0002_cy<7> (cg/bsm/Mcompar_closeToGlove1_cmp_lt0002_cy<7>)
+     LUT3:I1->O            3   0.439   1.010  cg/bsm/closeToGlove121 (cg/bsm/N50)
+     LUT4:I0->O            1   0.439   0.517  cg/bsm/debug1 (led_0_OBUF)
      OBUF:I->O                 4.361          led_0_OBUF (led<0>)
     ----------------------------------------
-    Total                     14.087ns (9.974ns logic, 4.113ns route)
-                                       (70.8% logic, 29.2% route)
+    Total                     14.302ns (9.921ns logic, 4.381ns route)
+                                       (69.4% logic, 30.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'display1/clock1'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              5.630ns (Levels of Logic = 1)
+  Source:            display1/disp_rs (FF)
+  Destination:       disp_rs (PAD)
+  Source Clock:      display1/clock1 rising
+
+  Data Path: display1/disp_rs to disp_rs
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.568   0.701  display1/disp_rs (display1/disp_rs)
+     OBUF:I->O                 4.361          disp_rs_OBUF (disp_rs)
+    ----------------------------------------
+    Total                      5.630ns (4.929ns logic, 0.701ns route)
+                                       (87.5% logic, 12.5% route)
 
 =========================================================================
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 14 / 14
 -------------------------------------------------------------------------
-Delay:               4.696ns (Levels of Logic = 2)
+Delay:               4.758ns (Levels of Logic = 2)
   Source:            clock_27mhz (PAD)
   Destination:       cg/dp2/map:clka (PAD)
 
@@ -1304,24 +1524,24 @@ Delay:               4.696ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUFG:I->O            1   1.414   0.517  clock_27mhz_IBUFG (clock_27mhz_IBUFG1)
-     BUFG:I->O           452   0.589   2.176  clock_27mhz_IBUFG_BUFG (clock_27mhz_IBUFG)
+     BUFG:I->O           476   0.589   2.238  clock_27mhz_IBUFG_BUFG (clock_27mhz_IBUFG)
     ball_color_map:clka        0.000          cg/db/map
     ----------------------------------------
-    Total                      4.696ns (2.003ns logic, 2.693ns route)
-                                       (42.7% logic, 57.3% route)
+    Total                      4.758ns (2.003ns logic, 2.755ns route)
+                                       (42.1% logic, 57.9% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 22.00 secs
-Total CPU time to Xst completion: 21.22 secs
+Total REAL time to Xst completion: 26.00 secs
+Total CPU time to Xst completion: 25.04 secs
  
 --> 
 
 
-Total memory usage is 503644 kilobytes
+Total memory usage is 511364 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  372 (   0 filtered)
-Number of infos    :   11 (   0 filtered)
+Number of warnings :  352 (   0 filtered)
+Number of infos    :   40 (   0 filtered)
 
