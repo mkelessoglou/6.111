@@ -653,11 +653,12 @@ Unit <ac97commands> synthesized.
 
 Synthesizing Unit <sound>.
     Related source file is "../sources/sound.v".
+    Found 8-bit register for signal <data>.
     Found 14-bit up counter for signal <address>.
     Found 1-bit register for signal <playing>.
     Summary:
 	inferred   1 Counter(s).
-	inferred   1 D-type flip-flop(s).
+	inferred   9 D-type flip-flop(s).
 Unit <sound> synthesized.
 
 
@@ -1072,7 +1073,7 @@ Macro Statistics
  8-bit up counter                                      : 2
 # Accumulators                                         : 1
  16-bit up accumulator                                 : 1
-# Registers                                            : 108
+# Registers                                            : 109
  1-bit register                                        : 62
  10-bit register                                       : 1
  12-bit register                                       : 6
@@ -1083,7 +1084,7 @@ Macro Statistics
  3-bit register                                        : 1
  32-bit register                                       : 1
  4-bit register                                        : 8
- 8-bit register                                        : 1
+ 8-bit register                                        : 2
 # Comparators                                          : 82
  16-bit comparator greatequal                          : 5
  16-bit comparator greater                             : 9
@@ -1213,6 +1214,14 @@ WARNING:Xst:1710 - FF/Latch <l_right_data_1> (without init value) has a constant
 WARNING:Xst:2677 - Node <clean> of sequential type is unconnected in block <db2>.
 WARNING:Xst:2677 - Node <clean> of sequential type is unconnected in block <db3>.
 WARNING:Xst:2677 - Node <clean> of sequential type is unconnected in block <d0>.
+WARNING:Xst:2677 - Node <throw_event> of sequential type is unconnected in block <bsm>.
+WARNING:Xst:2677 - Node <data_1> of sequential type is unconnected in block <s1>.
+WARNING:Xst:2677 - Node <data_2> of sequential type is unconnected in block <s1>.
+WARNING:Xst:2677 - Node <data_3> of sequential type is unconnected in block <s1>.
+WARNING:Xst:2677 - Node <data_4> of sequential type is unconnected in block <s1>.
+WARNING:Xst:2677 - Node <data_5> of sequential type is unconnected in block <s1>.
+WARNING:Xst:2677 - Node <data_6> of sequential type is unconnected in block <s1>.
+WARNING:Xst:2677 - Node <data_7> of sequential type is unconnected in block <s1>.
 WARNING:Xst:2677 - Node <left_in_data_0> of sequential type is unconnected in block <ac97>.
 WARNING:Xst:2677 - Node <left_in_data_1> of sequential type is unconnected in block <ac97>.
 WARNING:Xst:2677 - Node <left_in_data_2> of sequential type is unconnected in block <ac97>.
@@ -1293,8 +1302,8 @@ Macro Statistics
  8-bit up counter                                      : 2
 # Accumulators                                         : 1
  16-bit up accumulator                                 : 1
-# Registers                                            : 632
- Flip-Flops                                            : 632
+# Registers                                            : 640
+ Flip-Flops                                            : 640
 # Comparators                                          : 82
  16-bit comparator greatequal                          : 5
  16-bit comparator greater                             : 9
@@ -1335,6 +1344,13 @@ WARNING:Xst:2677 - Node <db3/clean> of sequential type is unconnected in block <
 WARNING:Xst:2677 - Node <db3/new> of sequential type is unconnected in block <catch>.
 WARNING:Xst:2677 - Node <db2/clean> of sequential type is unconnected in block <catch>.
 WARNING:Xst:2677 - Node <db2/new> of sequential type is unconnected in block <catch>.
+WARNING:Xst:2677 - Node <s1/data_7> of sequential type is unconnected in block <catch>.
+WARNING:Xst:2677 - Node <s1/data_6> of sequential type is unconnected in block <catch>.
+WARNING:Xst:2677 - Node <s1/data_5> of sequential type is unconnected in block <catch>.
+WARNING:Xst:2677 - Node <s1/data_4> of sequential type is unconnected in block <catch>.
+WARNING:Xst:2677 - Node <s1/data_3> of sequential type is unconnected in block <catch>.
+WARNING:Xst:2677 - Node <s1/data_2> of sequential type is unconnected in block <catch>.
+WARNING:Xst:2677 - Node <s1/data_1> of sequential type is unconnected in block <catch>.
 WARNING:Xst:2677 - Node <gma/dx_15> of sequential type is unconnected in block <draw_ball>.
 WARNING:Xst:2677 - Node <gma/dx_14> of sequential type is unconnected in block <draw_ball>.
 WARNING:Xst:2677 - Node <gma/dx_13> of sequential type is unconnected in block <draw_ball>.
@@ -1426,6 +1442,7 @@ WARNING:Xst:2677 - Node <a/ac97/left_in_data_3> of sequential type is unconnecte
 WARNING:Xst:2677 - Node <a/ac97/left_in_data_2> of sequential type is unconnected in block <catch>.
 WARNING:Xst:2677 - Node <a/ac97/left_in_data_1> of sequential type is unconnected in block <catch>.
 WARNING:Xst:2677 - Node <a/ac97/left_in_data_0> of sequential type is unconnected in block <catch>.
+WARNING:Xst:2677 - Node <cg/bsm/throw_event> of sequential type is unconnected in block <catch>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -1521,17 +1538,17 @@ Design Statistics
 # IOs                              : 576
 
 Cell Usage :
-# BELS                             : 3424
+# BELS                             : 3422
 #      GND                         : 1
-#      INV                         : 253
+#      INV                         : 254
 #      LUT1                        : 218
-#      LUT2                        : 452
+#      LUT2                        : 454
 #      LUT2_D                      : 2
 #      LUT2_L                      : 2
-#      LUT3                        : 254
+#      LUT3                        : 252
 #      LUT3_D                      : 7
 #      LUT3_L                      : 3
-#      LUT4                        : 561
+#      LUT4                        : 558
 #      LUT4_D                      : 9
 #      LUT4_L                      : 16
 #      MUXCY                       : 974
@@ -1542,8 +1559,8 @@ Cell Usage :
 #      XORCY                       : 543
 # FlipFlops/Latches                : 624
 #      FD                          : 220
-#      FDE                         : 153
-#      FDR                         : 117
+#      FDE                         : 152
+#      FDR                         : 118
 #      FDRE                        : 63
 #      FDRS                        : 10
 #      FDRSE                       : 16
@@ -1584,10 +1601,10 @@ Device utilization summary:
 
 Selected Device : 2v6000bf957-4 
 
- Number of Slices:                      976  out of  33792     2%  
+ Number of Slices:                      977  out of  33792     2%  
  Number of Slice Flip Flops:            624  out of  67584     0%  
- Number of 4 input LUTs:               1822  out of  67584     2%  
-    Number used as logic:              1777
+ Number of 4 input LUTs:               1820  out of  67584     2%  
+    Number used as logic:              1775
     Number used as Shift registers:      45
  Number of IOs:                         576
  Number of bonded IOBs:                 260  out of    684    38%  
@@ -1616,20 +1633,20 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clock_27mhz                        | IBUFG+BUFG             | 98    |
-clock_27mhz                        | vclk1:CLKFX            | 486   |
+clock_27mhz                        | IBUFG+BUFG             | 99    |
+clock_27mhz                        | vclk1:CLKFX            | 485   |
 display1/clock1                    | BUFG                   | 43    |
 ac97_bit_clock                     | BUFGP                  | 45    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
------------------------------------------------------+-----------------------------------+-------+
-Control Signal                                       | Buffer(FF name)                   | Load  |
------------------------------------------------------+-----------------------------------+-------+
-a/ac97/Mmux__varindex0000_9(XST_GND:G)               | NONE(cg/dp2/gma/Mmult_dy_mult0001)| 3     |
-cg/dp1/gma/Madd_outofbounds3_add0000_cy<0>(XST_VCC:P)| NONE(cg/dp2/gma/Mmult_dy_mult0001)| 3     |
------------------------------------------------------+-----------------------------------+-------+
+-----------------------------------------------------+----------------------------------+-------+
+Control Signal                                       | Buffer(FF name)                  | Load  |
+-----------------------------------------------------+----------------------------------+-------+
+a/ac97/Mmux__varindex0000_9(XST_GND:G)               | NONE(cg/db/gma/Mmult_dy_mult0001)| 3     |
+cg/dp1/gma/Madd_outofbounds3_add0000_cy<0>(XST_VCC:P)| NONE(cg/db/gma/Mmult_dy_mult0001)| 3     |
+-----------------------------------------------------+----------------------------------+-------+
 
 Timing Summary:
 ---------------
@@ -1638,7 +1655,7 @@ Speed Grade: -4
    Minimum period: 32.904ns (Maximum Frequency: 30.391MHz)
    Minimum input arrival time before clock: 13.725ns
    Maximum output required time after clock: 14.302ns
-   Maximum combinational path delay: 3.779ns
+   Maximum combinational path delay: 3.782ns
 
 Timing Detail:
 --------------
@@ -1647,7 +1664,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock_27mhz'
   Clock period: 32.904ns (frequency: 30.391MHz)
-  Total number of paths / destination ports: 35409 / 985
+  Total number of paths / destination ports: 35395 / 985
 -------------------------------------------------------------------------
 Delay:               5.484ns (Levels of Logic = 1)
   Source:            reset_sr (FF)
@@ -1692,7 +1709,7 @@ Delay:               13.439ns (Levels of Logic = 14)
      MUXF7:I0->O           1   0.447   0.726  display1/Mmux__varindex0000_8_f7 (display1/Mmux__varindex0000_8_f7)
      LUT2:I1->O            1   0.439   0.000  display1/disp_data_out_mux0000782 (display1/disp_data_out_mux0000782)
      MUXF5:I0->O           1   0.436   0.552  display1/disp_data_out_mux000078_f5 (display1/disp_data_out_mux000078)
-     LUT3:I2->O            1   0.439   0.000  display1/disp_data_out_mux0000131_G (N591)
+     LUT3:I2->O            1   0.439   0.000  display1/disp_data_out_mux0000131_G (N589)
      MUXF5:I1->O           2   0.436   0.910  display1/disp_data_out_mux0000131 (display1/disp_data_out_mux0000131)
      LUT2:I1->O            1   0.439   0.000  display1/disp_data_out_mux00001692 (display1/disp_data_out_mux00001691)
      MUXF5:I0->O           1   0.436   0.000  display1/disp_data_out_mux0000169_f5 (display1/disp_data_out_mux0000)
@@ -1721,7 +1738,7 @@ Delay:               8.233ns (Levels of Logic = 7)
      MUXF6:S->O            1   0.570   0.000  a/ac97/Mmux__varindex0001_6_f6 (a/ac97/Mmux__varindex0001_6_f6)
      MUXF7:I1->O           1   0.447   0.803  a/ac97/Mmux__varindex0001_5_f7 (a/ac97/Mmux__varindex0001_5_f7)
      LUT4:I0->O            1   0.439   0.803  a/ac97/ac97_sdata_out_mux000059 (a/ac97/ac97_sdata_out_mux000059)
-     LUT3:I0->O            1   0.439   0.000  a/ac97/ac97_sdata_out_mux000094_F (N594)
+     LUT3:I0->O            1   0.439   0.000  a/ac97/ac97_sdata_out_mux000094_F (N592)
      MUXF5:I0->O           1   0.436   0.803  a/ac97/ac97_sdata_out_mux000094 (a/ac97/ac97_sdata_out_mux000094)
      LUT4:I0->O            1   0.439   0.000  a/ac97/ac97_sdata_out_mux00002311 (a/ac97/ac97_sdata_out_mux0000231)
      FDS:D                     0.370          a/ac97/ac97_sdata_out
@@ -1731,9 +1748,9 @@ Delay:               8.233ns (Levels of Logic = 7)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_27mhz'
-  Total number of paths / destination ports: 1350 / 366
+  Total number of paths / destination ports: 1341 / 364
 -------------------------------------------------------------------------
-Offset:              7.202ns (Levels of Logic = 5)
+Offset:              7.176ns (Levels of Logic = 5)
   Source:            button_enter (PAD)
   Destination:       cg/bsm/ball_y_1 (FF)
   Destination Clock: clock_27mhz rising 2.4X
@@ -1742,15 +1759,15 @@ Offset:              7.202ns (Levels of Logic = 5)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            65   0.825   1.381  button_enter_IBUF (button_enter_IBUF)
-     LUT3:I1->O            7   0.439   0.850  cg/bsm/ball_x_mux0000<10>51 (cg/bsm/N33)
+     IBUF:I->O            64   0.825   1.379  button_enter_IBUF (button_enter_IBUF)
+     LUT3:I1->O            6   0.439   0.828  cg/bsm/ball_x_mux0000<10>51 (cg/bsm/N33)
      LUT4:I2->O           13   0.439   1.162  cg/bsm/ball_x_mux0000<0>41 (cg/bsm/N40)
      LUT3_D:I1->O          7   0.439   0.856  cg/bsm/ball_y_mux0000<11>21 (cg/bsm/N43)
      LUT4:I3->O            1   0.439   0.000  cg/bsm/ball_y_mux0000<5>1 (cg/bsm/ball_y_mux0000<5>)
      FDE:D                     0.370          cg/bsm/ball_y_5
     ----------------------------------------
-    Total                      7.202ns (2.951ns logic, 4.251ns route)
-                                       (41.0% logic, 59.0% route)
+    Total                      7.176ns (2.951ns logic, 4.225ns route)
+                                       (41.1% logic, 58.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'display1/clock1'
@@ -1776,7 +1793,7 @@ Offset:              13.725ns (Levels of Logic = 15)
      MUXF7:I0->O           1   0.447   0.726  display1/Mmux__varindex0000_8_f7 (display1/Mmux__varindex0000_8_f7)
      LUT2:I1->O            1   0.439   0.000  display1/disp_data_out_mux0000782 (display1/disp_data_out_mux0000782)
      MUXF5:I0->O           1   0.436   0.552  display1/disp_data_out_mux000078_f5 (display1/disp_data_out_mux000078)
-     LUT3:I2->O            1   0.439   0.000  display1/disp_data_out_mux0000131_G (N591)
+     LUT3:I2->O            1   0.439   0.000  display1/disp_data_out_mux0000131_G (N589)
      MUXF5:I1->O           2   0.436   0.910  display1/disp_data_out_mux0000131 (display1/disp_data_out_mux0000131)
      LUT2:I1->O            1   0.439   0.000  display1/disp_data_out_mux00001692 (display1/disp_data_out_mux00001691)
      MUXF5:I0->O           1   0.436   0.000  display1/disp_data_out_mux0000169_f5 (display1/disp_data_out_mux0000)
@@ -1862,7 +1879,7 @@ Offset:              5.630ns (Levels of Logic = 1)
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Delay:               3.779ns (Levels of Logic = 2)
+Delay:               3.782ns (Levels of Logic = 2)
   Source:            clock_27mhz (PAD)
   Destination:       s1/sr:clka (PAD)
 
@@ -1870,25 +1887,25 @@ Delay:               3.779ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUFG:I->O            1   1.414   0.517  clock_27mhz_IBUFG (clock_27mhz_IBUFG1)
-     BUFG:I->O            98   0.589   1.259  clock_27mhz_IBUFG_BUFG (clock_27mhz_IBUFG)
+     IBUFG:I->O            1   1.414   0.518  clock_27mhz_IBUFG (clock_27mhz_IBUFG1)
+     BUFG:I->O            99   0.589   1.261  clock_27mhz_IBUFG_BUFG (clock_27mhz_IBUFG)
     soundrom:clka              0.000          s1/sr
     ----------------------------------------
-    Total                      3.779ns (2.003ns logic, 1.776ns route)
+    Total                      3.782ns (2.003ns logic, 1.779ns route)
                                        (53.0% logic, 47.0% route)
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 28.00 secs
-Total CPU time to Xst completion: 27.06 secs
+Total CPU time to Xst completion: 26.99 secs
  
 --> 
 
 
-Total memory usage is 518272 kilobytes
+Total memory usage is 518120 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  505 (   0 filtered)
+Number of warnings :  521 (   0 filtered)
 Number of infos    :   50 (   0 filtered)
 

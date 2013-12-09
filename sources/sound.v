@@ -24,7 +24,7 @@ module sound(
 		input clk,
 		input trigger,
 		input ready,
-		output[7:0] data);
+		output reg[7:0] data);
 		
 		reg[13:0] address = 0;
 		reg playing;

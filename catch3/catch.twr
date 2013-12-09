@@ -1,0 +1,141 @@
+--------------------------------------------------------------------------------
+Release 10.1.03 Trace  (lin64)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+
+/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/bin/lin64/unwrapped/trce -ise
+/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch3/catch3.ise
+-intstyle ise -v 3 -s 4 -xml catch catch.ncd -o catch.twr catch.pcf -ucf
+labkit.ucf
+
+Design file:              catch.ncd
+Physical constraint file: catch.pcf
+Device,package,speed:     xc2v6000,bf957,-4 (PRODUCTION 1.121 2008-07-25, STEPPING level 0)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clock_27mhz
+------------+------------+------------+------------------+--------+
+            |  Setup to  |  Hold to   |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+button0     |    6.143(R)|    0.600(R)|clock_65mhz       |   0.000|
+button1     |    6.813(R)|   -0.241(R)|clock_65mhz       |   0.000|
+button_enter|    6.392(R)|    0.457(R)|clock_65mhz       |   0.000|
+button_right|    2.982(R)|   -0.843(R)|clock_65mhz       |   0.000|
+user1<0>    |    7.694(R)|   -3.341(R)|clock_65mhz       |   0.000|
+user1<1>    |    6.994(R)|   -6.276(R)|clock_65mhz       |   0.000|
+user3<16>   |    4.440(R)|   -4.195(R)|clock_27mhz_IBUFG |   0.000|
+user3<17>   |    3.425(R)|   -3.180(R)|clock_27mhz_IBUFG |   0.000|
+user3<18>   |    3.446(R)|   -3.201(R)|clock_27mhz_IBUFG |   0.000|
+user3<19>   |    5.098(R)|   -4.853(R)|clock_27mhz_IBUFG |   0.000|
+user3<20>   |    3.877(R)|   -3.632(R)|clock_27mhz_IBUFG |   0.000|
+user3<21>   |    4.769(R)|   -4.524(R)|clock_27mhz_IBUFG |   0.000|
+user3<22>   |    3.214(R)|   -2.969(R)|clock_27mhz_IBUFG |   0.000|
+user3<23>   |    2.538(R)|   -2.293(R)|clock_27mhz_IBUFG |   0.000|
+user4<30>   |    9.252(R)|   -4.068(R)|clock_65mhz       |   0.000|
+user4<31>   |    8.666(R)|   -3.959(R)|clock_65mhz       |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock ac97_bit_clock to Pad
+--------------+------------+--------------------+--------+
+              | clk (edge) |                    | Clock  |
+Destination   |   to PAD   |Internal Clock(s)   | Phase  |
+--------------+------------+--------------------+--------+
+ac97_sdata_out|   13.880(R)|ac97_bit_clock_BUFGP|   0.000|
+ac97_synch    |   12.488(R)|ac97_bit_clock_BUFGP|   0.000|
+--------------+------------+--------------------+--------+
+
+Clock clock_27mhz to Pad
+----------------+------------+------------------+--------+
+                | clk (edge) |                  | Clock  |
+Destination     |   to PAD   |Internal Clock(s) | Phase  |
+----------------+------------+------------------+--------+
+audio_reset_b   |   10.442(R)|clock_27mhz_IBUFG |   0.000|
+disp_clock      |    9.004(R)|clock_27mhz_IBUFG |   0.000|
+led<0>          |   23.712(R)|clock_65mhz       |   0.000|
+user3<31>       |    9.930(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blank_b |   10.783(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<0> |   10.791(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<1> |   11.117(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<2> |   10.998(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<3> |   10.243(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<4> |   10.556(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<5> |   11.218(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<6> |   10.086(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_blue<7> |   10.462(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<0>|   10.192(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<1>|   11.739(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<2>|   10.107(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<3>|   10.568(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<4>|   11.252(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<5>|   11.234(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<6>|   11.522(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_green<7>|   11.097(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_hsync   |   10.949(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<0>  |   11.489(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<1>  |   11.349(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<2>  |   11.390(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<3>  |   11.749(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<4>  |   11.537(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<5>  |   11.449(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<6>  |   11.828(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_red<7>  |   11.928(R)|clock_27mhz_IBUFG |   0.000|
+vga_out_vsync   |   11.901(R)|clock_27mhz_IBUFG |   0.000|
+----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock ac97_bit_clock
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ac97_bit_clock |    6.129|         |         |         |
+clock_27mhz    |    3.682|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clock_27mhz
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ac97_bit_clock |    4.840|         |         |         |
+clock_27mhz    |   11.280|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+-------------------+---------+
+Source Pad     |Destination Pad    |  Delay  |
+---------------+-------------------+---------+
+clock_27mhz    |vga_out_pixel_clock|   11.452|
+---------------+-------------------+---------+
+
+
+Analysis completed Mon Dec  9 11:20:47 2013 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 377 MB
+
+
+

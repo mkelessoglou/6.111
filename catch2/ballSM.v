@@ -102,8 +102,8 @@ module ballSM(
 		reg[3:0] trig_counter;
 	 
 	 always @(posedge clk) begin
-		if (catch_event) trig_counter <= 5;
-		if (throw_event) trig_counter <= 5;
+		if (catch_event) trig_counter <= 3;
+		//if (throw_event) trig_counter <= 3;
 		if (trig_counter == 0) begin
 			catch_event <= 0;
 			throw_event <= 0;

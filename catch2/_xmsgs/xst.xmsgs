@@ -1312,6 +1312,30 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">clean</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">d0</arg>&gt;.
 </msg>
 
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">throw_event</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">bsm</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">data_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">s1</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">data_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">s1</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">data_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">s1</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">data_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">s1</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">data_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">s1</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">data_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">s1</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">data_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">s1</arg>&gt;.
+</msg>
+
 <msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">left_in_data_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ac97</arg>&gt;.
 </msg>
 
@@ -1460,6 +1484,27 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">db2/new</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">catch</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">s1/data_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">catch</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">s1/data_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">catch</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">s1/data_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">catch</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">s1/data_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">catch</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">s1/data_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">catch</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">s1/data_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">catch</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">s1/data_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">catch</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">gma/dx_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">draw_ball</arg>&gt;.
@@ -1667,6 +1712,9 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">a/ac97/left_in_data_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">catch</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="unknown" >Node &lt;<arg fmt="%s" index="1">cg/bsm/throw_event</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">catch</arg>&gt;.
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="unknown" >The FF/Latch &lt;<arg fmt="%s" index="1">a/ac97/l_cmd_data_14</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">catch</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">5 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;a/ac97/l_cmd_data_13&gt; &lt;a/ac97/l_cmd_data_12&gt; &lt;a/ac97/l_cmd_data_6&gt; &lt;a/ac97/l_cmd_data_5&gt; &lt;a/ac97/l_cmd_data_4&gt; </arg>
