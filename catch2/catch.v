@@ -146,9 +146,9 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
    
    // Audio Input and Output
    assign beep= 1'b0;
-   assign audio_reset_b = 1'b0;
+   /*assign audio_reset_b = 1'b0;
    assign ac97_synch = 1'b0;
-   assign ac97_sdata_out = 1'b0;
+   assign ac97_sdata_out = 1'b0;*/
    // ac97_sdata_in is an input
 
    // Video Output
@@ -346,7 +346,7 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
 	wire right_hand1;
 	wire right_hand2;
 	wire game_reset;
-	
+	wire soundtrigger;
 	//will eventually be set by switches
 	assign dist = 6'd6;
 	assign can_catch1=canCatch;
@@ -357,7 +357,7 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
 	/////////////////////////////////////////////////////////
 	
 	
-   catch_game cg(.vclock(clock_27mhz),.reset(game_reset),
+   catch_game cg(.vclock(clock_65mhz),.reset(game_reset),
                 .glove1closed(glove1closed),.glove2closed(glove2closed),
 					 .rel_glove1x(glove1x),.rel_glove1y(glove1y),
 					 .rel_glove2x(glove2x),.rel_glove2y(glove2y),
@@ -366,6 +366,7 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
 					 .can_catch1(can_catch1),.can_catch2(can_catch2),
 					 .right_hand1(right_hand1),.right_hand2(right_hand2),
 		.hcount(hcount),.vcount(vcount),
+					.sound(soundtrigger),
                 .hsync(hsync),.vsync(vsync),.blank(blank),
 					 .debug(led[0]),
 		.phsync(phsync),.pvsync(pvsync),.pblank(pblank),.pixel(pixel));
@@ -398,7 +399,18 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
    
    assign led[7:1] = 7'b1111111;
 	
+	wire [4:0] volume = 5'b11111;
+	
+	reg synctrig;
+	always @(posedge clock_27mhz) synctrig <= soundtrigger;
+	
+	sound s1(.clk(clock_27mhz),.trigger(synctrig),.ready(ready),.data(to_ac97_data));
+	
 	//assign led[1] = canCatch;
+	// AC97 driver
+   lab5audio a(clock_27mhz, reset, volume, to_ac97_data,ready,
+	       audio_reset_b, ac97_sdata_out, ac97_sdata_in,
+	       ac97_synch, ac97_bit_clock);
 
 endmodule
 

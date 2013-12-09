@@ -1,0 +1,13 @@
+# Output products list for <soundrom>
+soundrom.asy
+soundrom.mif
+soundrom.ngc
+soundrom.sym
+soundrom.v
+soundrom.veo
+soundrom.vhd
+soundrom.vho
+soundrom.xco
+soundrom_blk_mem_gen_v2_8_xst_1.ngc_xst.xrpt
+soundrom_flist.txt
+soundrom_xmdf.tcl

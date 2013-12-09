@@ -852,6 +852,8 @@ proc restore { { project_dir "" } } {
       "../sources/roms/open_hand_color_map/open_hand_color_map.xco" 
       "../sources/roms/open_hand_color_table/open_hand_color_table.xco" 
       "../sources/roms/open_hand_l_color_map/open_hand_l_color_map.xco" 
+      "../sources/roms/soundrom/soundrom.xco" 
+      "../sources/sound.v" 
       "ballSM.v" 
       "blob.v" 
       "catch.v" 
@@ -953,6 +955,13 @@ proc restore { { project_dir "" } } {
       "../sources/roms/open_hand_l_color_map/open_hand_l_color_map.veo" 
       "../sources/roms/open_hand_l_color_map/open_hand_l_color_map.vhd" 
       "../sources/roms/open_hand_l_color_map/open_hand_l_color_map.vho" 
+      "../sources/roms/soundrom/soundrom.asy" 
+      "../sources/roms/soundrom/soundrom.ngc" 
+      "../sources/roms/soundrom/soundrom.sym" 
+      "../sources/roms/soundrom/soundrom.v" 
+      "../sources/roms/soundrom/soundrom.veo" 
+      "../sources/roms/soundrom/soundrom.vhd" 
+      "../sources/roms/soundrom/soundrom.vho" 
       "catch_guide.ncd"}
 
   set origination 2

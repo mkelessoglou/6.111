@@ -58,7 +58,7 @@ module ballSM(
 	 
 	 //This signal dictates when velocity and position are updated
 	 reg update;
-	 reg[17:0] update_counter;
+	 reg[18:0] update_counter;
 	 
 	 //These variables keep track of past positions of the ball to determine
 	//	 its velocity
@@ -99,17 +99,22 @@ module ballSM(
 			|| (ball_y < ballRadius + 5);
 
 
+		reg[3:0] trig_counter;
 	 
 	 always @(posedge clk) begin
-		if (catch_event) catch_event <= 0;
-		if (throw_event) throw_event <= 0;
+		if (catch_event) trig_counter <= 5;
+		if (throw_event) trig_counter <= 5;
+		if (trig_counter == 0) begin
+			catch_event <= 0;
+			throw_event <= 0;
+		end else trig_counter <= trig_counter - 1;
 		glove1opened <= ~glove1closed;
 		glove2opened <= ~glove2closed;
 		glove1edge <= glove1closed && glove1opened;
 		glove2edge <= glove2closed && glove2opened;
 		if (update_counter == 0) begin
 			update <= 1;
-			update_counter <= 210937;//128Hz must be same as updatesPerSec
+			update_counter <= 507811;//128Hz must be same as updatesPerSec
 		end else begin
 			update <= 0;
 			update_counter <= update_counter - 1;

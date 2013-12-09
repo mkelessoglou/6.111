@@ -40,7 +40,7 @@ module catch_game (
    input hsync,		// XVGA horizontal sync signal (active low)
    input vsync,		// XVGA vertical sync signal (active low)
    input blank,		// XVGA blanking (1 means output black pixel)
-	
+	output sound,
  	output debug,
    output phsync,	// pong game's horizontal sync
    output pvsync,	// pong game's vertical sync
@@ -73,6 +73,7 @@ module catch_game (
 	wire catch_event;
 	wire throw_event;
 	
+	assign sound = catch_event;
 	
 	global_coords gc(.clk(vclock),
 			.rel_glove1x(rel_glove1x),.rel_glove1y(rel_glove1y),

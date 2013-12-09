@@ -28,12 +28,16 @@ closed_hand_l_color_map -sd
 /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms/
 closed_hand_color_map -sd
 /afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms/
-closed_hand_color_table -aul -nt timestamp -i -p xc2v6000-bf957-4 catch.ngc
-catch.ngd
+closed_hand_color_table -sd
+/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms/
+soundrom -aul -nt timestamp -i -p xc2v6000-bf957-4 catch.ngc catch.ngd
 
 Reading NGO file
 "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/catch2/catch
 .ngc" ...
+Loading design module
+"/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms
+/soundrom/soundrom.ngc"...
 Loading design module
 "/afs/athena.mit.edu/user/m/k/mkel/Desktop/6.111/finalproject/6.111/sources/roms
 /open_hand_color_map/open_hand_color_map.ngc"...
@@ -360,7 +364,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings: 263
 
-Total memory usage is 238864 kilobytes
+Total memory usage is 240016 kilobytes
 
 Writing NGD file "catch.ngd" ...
 
