@@ -164,21 +164,17 @@ WARNING:NgdBuild:470 - bidirect pad net 'user2<23>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'user2<18>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'daughtercard<38>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'daughtercard<43>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'user1<2>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'user4<5>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'user2<24>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'user2<19>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'daughtercard<39>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'user1<3>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'tv_in_i2c_data' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'user4<6>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'user2<30>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'user2<25>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'user1<4>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'user4<7>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'user2<26>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'user2<31>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'user1<5>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'user4<8>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'user2<27>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'user1<6>' has no legal driver
@@ -362,9 +358,9 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings: 263
+  Number of warnings: 259
 
-Total memory usage is 240008 kilobytes
+Total memory usage is 241712 kilobytes
 
 Writing NGD file "catch.ngd" ...
 

@@ -1,3 +1,6 @@
 NUM_USER_FILES
-0
+1
+s
+user_file_1
+../sources/synchronize.v
 s

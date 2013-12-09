@@ -321,7 +321,9 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
   assign user3[31] = adcClk;
  
   //Debounce can Catch signal to make it more useful
-  debounce d0(.reset(0), .clock(clock_27_mhz), .noisy(canCatch), .clean(canCatchClean));
+  wire canCatchsync;
+  debounce d0(.reset(0), .clock(clock_65mhz), .noisy(canCatchsync), .clean(canCatchClean));
+  synchronize s0(.clk(clock_65mhz),.in(canCatch),.out(canCatchsync));
  
   wire [63:0] display;
   assign display = {3'b0, canCatch, 51'h0, open, zData};
@@ -349,7 +351,7 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
 	wire soundtrigger;
 	//will eventually be set by switches
 	assign dist = 6'd6;
-	assign can_catch1=canCatch;
+	assign can_catch1=canCatchClean;
 	assign can_catch2=user1[1];
 	assign glove1closed=~open;
 	assign glove2closed=user1[0];
@@ -362,7 +364,11 @@ module catch(beep, audio_reset_b, ac97_sdata_out, ac97_sdata_in, ac97_synch,
 					 .rel_glove1x(glove1x),.rel_glove1y(glove1y),
 					 .rel_glove2x(glove2x),.rel_glove2y(glove2y),
 					 .dist(dist),
-					 .test0(~button0),.test1(~button1),.test2(~button_right),
+					 .test0(~button0),.test1(~button1),
+					 .testright(~button_right),.testleft(~button_left),
+					 .testup(~button_up),.testdown(~button_down),
+					 .testright2(user1[3]),.testleft2(user1[2]),
+					 .testup2(user1[4]),.testdown2(user1[5]),
 					 .can_catch1(can_catch1),.can_catch2(can_catch2),
 					 .right_hand1(right_hand1),.right_hand2(right_hand2),
 		.hcount(hcount),.vcount(vcount),

@@ -11,31 +11,31 @@ Target Device  : xc2v6000
 Target Package : bf957
 Target Speed   : -4
 Mapper Version : virtex2 -- $Revision: 1.46.12.2 $
-Mapped Date    : Mon Dec  9 11:19:38 2013
+Mapped Date    : Mon Dec  9 16:55:16 2013
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:  459
+Number of warnings:  452
 Logic Utilization:
-  Number of Slice Flip Flops:           628 out of  67,584    1%
-  Number of 4 input LUTs:             1,629 out of  67,584    2%
+  Number of Slice Flip Flops:           700 out of  67,584    1%
+  Number of 4 input LUTs:             2,016 out of  67,584    2%
 Logic Distribution:
-  Number of occupied Slices:          1,031 out of  33,792    3%
-    Number of Slices containing only related logic:   1,031 out of   1,031 100%
-    Number of Slices containing unrelated logic:          0 out of   1,031   0%
+  Number of occupied Slices:          1,194 out of  33,792    3%
+    Number of Slices containing only related logic:   1,194 out of   1,194 100%
+    Number of Slices containing unrelated logic:          0 out of   1,194   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       1,847 out of  67,584    2%
-    Number used as logic:             1,584
-    Number used as a route-thru:        218
-    Number used as Shift registers:      45
+  Total Number of 4 input LUTs:       2,157 out of  67,584    3%
+    Number used as logic:             1,970
+    Number used as a route-thru:        141
+    Number used as Shift registers:      46
   Number of bonded IOBs:                576 out of     684   84%
   Number of RAMB16s:                     16 out of     144   11%
   Number of MULT18X18s:                   3 out of     144    2%
   Number of BUFGMUXs:                     4 out of      16   25%
   Number of DCMs:                         1 out of      12    8%
 
-Peak Memory Usage:  511 MB
+Peak Memory Usage:  515 MB
 Total REAL time to MAP completion:  6 secs 
 Total CPU time to MAP completion:   5 secs 
 
@@ -80,7 +80,7 @@ Section 1 - Errors
 Section 2 - Warnings
 --------------------
 WARNING:LIT:243 - Logical network user3<28>_IBUF has no load.
-WARNING:LIT:395 - The above warning message base_net_load_rule is repeated 322
+WARNING:LIT:395 - The above warning message base_net_load_rule is repeated 315
    more times for the following (max. 5 shown):
    user3<4>_IBUF,
    user3<29>_IBUF,
@@ -253,8 +253,6 @@ WARNING:PhysDesignRules:367 - The signal <button3_IBUF> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <tv_in_data_valid_IBUF> is incomplete.
    The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <button_up_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <disp_data_in_IBUF> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <ram0_data<0>_IBUF> is incomplete. The
@@ -551,17 +549,9 @@ WARNING:PhysDesignRules:367 - The signal <flash_data<9>_IBUF> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <ac97_sdata_in_IBUF> is incomplete. The
    signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <user1<2>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <user1<3>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <user2<0>_IBUF> is incomplete. The
    signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <user1<4>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <user2<1>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <user1<5>_IBUF> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <user2<2>_IBUF> is incomplete. The
    signal does not drive any load pins in the design.
@@ -631,10 +621,6 @@ WARNING:PhysDesignRules:367 - The signal <tv_in_line_clock1_IBUF> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <tv_in_line_clock2_IBUF> is incomplete.
    The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <button_left_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <button_down_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <daughtercard<10>_IBUF> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <daughtercard<11>_IBUF> is incomplete.
@@ -1157,7 +1143,7 @@ INFO:PhysDesignRules:772 - To achieve optimal frequency synthesis performance
 Section 4 - Removed Logic Summary
 ---------------------------------
   40 block(s) removed
-  73 block(s) optimized away
+  74 block(s) optimized away
   22 signal(s) removed
 
 Section 5 - Removed Logic

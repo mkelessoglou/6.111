@@ -34,7 +34,14 @@ module catch_game (
 	input right_hand2,
 	input test0,
 	input test1,
-	input test2,
+	input testright,
+	input testleft,
+	input testup,
+	input testdown,
+	input testright2,
+	input testleft2,
+	input testup2,
+	input testdown2,
    input [10:0] hcount,	// horizontal index of current pixel (0..1023)
    input [9:0] 	vcount, // vertical index of current pixel (0..767)
    input hsync,		// XVGA horizontal sync signal (active low)
@@ -79,7 +86,10 @@ module catch_game (
 			.rel_glove1x(rel_glove1x),.rel_glove1y(rel_glove1y),
 			.rel_glove2x(rel_glove2x),.rel_glove2y(rel_glove2y),
 			.dist(dist),.right_hand1(right_hand1),.right_hand2(right_hand2),
-			.test(test2),
+			.testright(testright),.testleft(testleft),
+			.testup(testup),.testdown(testdown),
+			.testright2(testright2),.testleft2(testleft2),
+			.testup2(testup2),.testdown2(testdown2),
 			.glob_glove1x(glove1x),.glob_glove1y(glove1y),
 			.glob_glove2x(glove2x),.glob_glove2y(glove2y));
 	
